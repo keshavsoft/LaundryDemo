@@ -1,7 +1,8 @@
 let StartFunc = () => {
     return {
         ...jFLocalCustomerName(),
-        ...jFLocalMobile()
+        ...jFLocalMobile(),
+        ...jFLocalCity()
     };
 };
 
@@ -26,5 +27,17 @@ let jFLocalMobile = () => {
         Mobile: jVarLocalFolderName
     };
 };
+
+let jFLocalCity = () => {
+    let jVarLocalHtmlCityId = "CityId";
+   let  jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlCityId);
+   let jVarLocalFolderName = jVarCreateFolderInputId.value.trim();
+   //jVarLocal.innerHTML = ;
+   return {
+        City: jVarLocalFolderName
+   }
+};
+
+
 
 export { StartFunc };
