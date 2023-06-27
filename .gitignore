@@ -1,5 +1,5 @@
-node_modules/
-Cleaning/
-public/
+/node_modules
+/Cleaning
+/public
 
 .env
