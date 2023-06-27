@@ -1,7 +1,8 @@
 let StartFunc = () => {
     return {
         ...jFLocalCustomerName(),
-        ...jFLocalMobile()
+        ...jFLocalMobile(),
+        ...jFLocalCity()
     };
 };
 
@@ -25,6 +26,22 @@ let jFLocalMobile = () => {
     return {
         Mobile: jVarLocalFolderName
     };
+};
+
+let jFLocalCity = () => {
+    let jVarLocalHtmlCityId = "CityId";
+   let  jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlCityId);
+   let jVarLocalFolderName = jVarCreateFolderInputId.value.trim();
+   //jVarLocal.innerHTML = ;
+   return {
+        City: jVarLocalFolderName
+   }
+};
+
+let jFLocal = ({ in }) => {
+    let jVarLocalHtmlId = '';
+   let jVarLocal = document.getElementById(jVarLocalHtmlId);
+   jVarLocal.innerHTML = in;
 };
 
 export { StartFunc };
