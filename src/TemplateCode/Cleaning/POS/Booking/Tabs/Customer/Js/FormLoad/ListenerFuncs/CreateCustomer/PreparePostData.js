@@ -38,10 +38,6 @@ let jFLocalCity = () => {
    }
 };
 
-let jFLocal = ({ in }) => {
-    let jVarLocalHtmlId = '';
-   let jVarLocal = document.getElementById(jVarLocalHtmlId);
-   jVarLocal.innerHTML = in;
-};
+
 
 export { StartFunc };
