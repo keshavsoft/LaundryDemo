@@ -5,7 +5,9 @@ const StartFunc = () => {
     let jVarLocalFromAdmin = true;
 
     if (jVarLocalFromAdmin) {
+        
         StartFuncFormLoad();
+        
 
         StartFuncShowOnDom({}).then(() => {
         });
