@@ -6,12 +6,15 @@ import { StartFunc as StartFuncAfterFetch } from "./AfterFetch.js";
 let StartFunc = async () => {
     if (StartFuncCheckBeforeFetch()) {
         let jVarLocalBodyData = StartFuncPreparePostData();
+        console.log("Haiiii", jVarLocalBodyData);
 
         let response = await StartFuncFetchFunc({
             inBodyData: jVarLocalBodyData
         });
 
-        StartFuncAfterFetch({ inFromFetch: response });
+        StartFuncAfterFetch({
+            inFromFetch: response, inCustomerName: jVarLocalBodyData.CustomerName
+        });
     };
 };
 
