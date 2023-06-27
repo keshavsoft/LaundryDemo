@@ -2,7 +2,7 @@ let StartFunc = () => {
     return {
         ...jFLocalCustomerName(),
         ...jFLocalMobile(),
-        ...jFLocalCity()
+        City: jFLocalCityId()
     };
 };
 
@@ -28,16 +28,19 @@ let jFLocalMobile = () => {
     };
 };
 
-let jFLocalCity = () => {
-    let jVarLocalHtmlCityId = "CityId";
-   let  jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlCityId);
-   let jVarLocalFolderName = jVarCreateFolderInputId.value.trim();
-   //jVarLocal.innerHTML = ;
-   return {
-        City: jVarLocalFolderName
-   }
+let jFLocalCityId = () => {
+    let jVarLocalHtmlCityId = 'CityId';
+   let jVarHtmlCityId = document.getElementById(jVarLocalHtmlCityId);
+   let jVarHtmlCityIdValue = jVarHtmlCityId.value.trim();
+   return jVarHtmlCityIdValue;
 };
 
+let jFLocalCityId1 = () => {
+    let jVarLocalHtmlCityId = "CityId";
+    let jVarHtmlCityId = document.getElementById(jVarLocalHtmlCityId);
+    let jVarHtmlCityIdValue = jVarHtmlCityId.value.trim();
 
+    return jVarHtmlCityIdValue;
+};
 
 export { StartFunc };

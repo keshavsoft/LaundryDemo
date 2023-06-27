@@ -52,7 +52,7 @@
 	},
 	"Mock Template Function For Html": {
 		"scope": "javascript,typescript",
-		"prefix": "KMockHtml",
+		"prefix": "KMockHtmlAssignToDom",
 		"body": [
 			"let jFLocal$1 = ({ in$1 }) => {",
 			"	let jVarLocalHtmlId = '$1';",
@@ -61,22 +61,18 @@
 			"};"
 		],
 		"description": "Log output to console"
+	},
+	"Mock Template Function For Html to pull from Dom": {
+		"scope": "javascript,typescript",
+		"prefix": "KMockHtmlAssignFromDom",
+		"body": [
+			"let jFLocal$1 = () => {",
+			"	let jVarLocalHtml$1 = '$1';",
+			"   let jVarHtml$1 = document.getElementById(jVarLocalHtml$1);",
+			"   let jVarHtml$1Value = jVarHtml$1.value.trim();",
+			"   return jVarHtml$1Value;",
+			"};"
+		],
+		"description": "Log output to console"
 	}
-
-
-
-
-
-
-
-
-
-	
-
-    
- 
-
- 
-};
-
 }
