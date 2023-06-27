@@ -1,5 +1,4 @@
 let StartFunc = ({ inFromFetch, inCustomerName }) => {
-    console.log("HELLO", inCustomerName);
     if (inFromFetch.KTF) {
         jFLocalPostFetchNotArray({ inCustomerName });
     };
