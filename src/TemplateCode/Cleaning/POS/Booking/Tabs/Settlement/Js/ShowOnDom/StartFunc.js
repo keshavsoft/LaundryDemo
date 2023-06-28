@@ -2,9 +2,20 @@ import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../
 
 const StartFunc = ({ inPk }) => {
     let jVarLocalData = StartFuncFromLocalStorage({ inPk });
-    console.log("aaa : ", jVarLocalData.JsonData.CustomerData.CustomerMobile);
+
     jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.JsonData.CustomerData.CustomerName });
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.JsonData.CustomerData.CustomerMobile });
+    jFLocalItemDetails({ inData: jVarLocalData.JsonData });
+};
+
+let jFLocalItemDetails = ({ inData }) => {
+    let jVarLocalItemsArray = Object.values(inData.ItemsInOrder).map(element => {
+        return element.Total;
+    });
+
+    const sum = jVarLocalItemsArray.reduce((partialSum, a) => partialSum + a, 0);
+
+    jFLocalOrderAmountId({ inOrderAmountId: sum });
 };
 
 let jFLocalCustomerName = ({ inOrderInfoCustomerNameId }) => {
@@ -12,6 +23,12 @@ let jFLocalCustomerName = ({ inOrderInfoCustomerNameId }) => {
     let jVarLocalOrderInfoCustomerNameId = document.getElementById(jVarLocalHtmlId);
 
     jVarLocalOrderInfoCustomerNameId.innerHTML = inOrderInfoCustomerNameId;
+};
+
+let jFLocalOrderAmountId = ({ inOrderAmountId }) => {
+    let jVarLocalHtmlId = 'OrderAmountId';
+    let jVarLocalOrderAmountId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalOrderAmountId.innerHTML = inOrderAmountId;
 };
 
 let jFLocalOrderInfoCustomerMobileId = ({ inOrderInfoCustomerMobileId }) => {
