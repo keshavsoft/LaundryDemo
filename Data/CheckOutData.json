@@ -1,5 +1,6 @@
 {
-    "CashAmount": 20,
-    "CardAmount": 10,
-    "UPIAmount": 30
+    "CashAmount": 0,
+    "CardAmount": 0,
+    "UPIAmount": 0,
+    "isSettled": false
 }

@@ -12,7 +12,7 @@ const StartFunc = () => {
 
         await jFForItems({ indirHandle: dirHandle });
         await jFForCustomers({ indirHandle: dirHandle });
-        await jFForOrdersData({ indirHandle: dirHandle });
+      //  await jFForOrdersData({ indirHandle: dirHandle });
         await jFForCheckOutData({ indirHandle: dirHandle });
 
         // await StartFuncButtonClickFunc({ indirHandle: dirHandle });

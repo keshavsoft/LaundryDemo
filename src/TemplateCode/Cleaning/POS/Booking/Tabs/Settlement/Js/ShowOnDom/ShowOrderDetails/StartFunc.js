@@ -1,26 +1,27 @@
-// import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../../FromLocalStorage/OrdersData/FromPk.js";
-import { StartFunc as StartFuncShowOrderDetails } from "./ShowOrderDetails/StartFunc.js";
+import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../../../FromLocalStorage/OrdersData/FromPk.js";
 
 const StartFunc = ({ inPk }) => {
-    StartFuncShowOrderDetails({ inPk });
+    let jVarLocalData = StartFuncFromLocalStorage({ inPk });
+
+    jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.JsonData.CustomerData.CustomerName });
+    jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.JsonData.CustomerData.CustomerMobile });
+    jFLocalOrderAmount({ inData: jVarLocalData.JsonData });
 };
 
-const StartFunc1 = ({ inPk }) => {
-    // let jVarLocalData = StartFuncFromLocalStorage({ inPk });
-
-    // jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.JsonData.CustomerData.CustomerName });
-    // jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.JsonData.CustomerData.CustomerMobile });
-    // jFLocalItemDetails({ inData: jVarLocalData.JsonData });
-};
-
-let jFLocalItemDetails = ({ inData }) => {
+let jFLocalOrderAmount = ({ inData }) => {
     let jVarLocalItemsArray = Object.values(inData.ItemsInOrder).map(element => {
         return element.Total;
     });
 
     const sum = jVarLocalItemsArray.reduce((partialSum, a) => partialSum + a, 0);
 
-    jFLocalOrderAmountId({ inOrderAmountId: sum });
+    let jVarLocalAddOn = Object.values(inData.AddOnData).map(element => {
+        return element.AddOnRate;
+    });
+
+    const sumOfAddOn = jVarLocalAddOn.reduce((partialSum, a) => partialSum + a, 0);
+
+    jFLocalOrderAmountId({ inOrderAmountId: sum + sumOfAddOn });
 };
 
 let jFLocalCustomerName = ({ inOrderInfoCustomerNameId }) => {
