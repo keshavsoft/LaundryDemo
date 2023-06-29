@@ -29,4 +29,13 @@ const jFForOrdersData = async ({ indirHandle }) => {
     StartFuncOrdersData({ inData: JSON.parse(jVarLocalgetFileData) });
 };
 
+const jFForCheckOutData = async ({ indirHandle }) => {
+    const ConfigHandle = await indirHandle.getFileHandle('CheckOutData.json');
+    let jVarLocalgetFile = await ConfigHandle.getFile();
+
+    let jVarLocalgetFileData = await jVarLocalgetFile.text();
+
+    StartFuncOrdersData({ inData: JSON.parse(jVarLocalgetFileData) });
+};
+
 export { jFForItems, jFForCustomers, jFForOrdersData }

@@ -2,5 +2,6 @@
     "ItemKey": "Items",
     "Customers": "Customers",
     "CustomersSubKey": "CustomerNames",
-    "OrdersData": "OrdersData"
+    "OrdersData": "OrdersData",
+    "CheckOutData": "CheckOutData"
 }

@@ -5,7 +5,7 @@ import { StartFunc as StartFuncFactoriesToLocalStorage } from "./Factories/Facto
 
 let StartFunc = () => {
     StartFuncAddToLocalStorageWashTypesInsert();
-    StartFuncPullCustomers();
+    // StartFuncPullCustomers();
     // StartFuncItemsToLocalStorage();
     StartFuncFactoriesToLocalStorage();
 };
