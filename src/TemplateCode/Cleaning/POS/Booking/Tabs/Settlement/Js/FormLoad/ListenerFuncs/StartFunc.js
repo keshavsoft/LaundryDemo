@@ -1,7 +1,9 @@
-// import { StartFunc as StartFuncSaveButton } from "./SaveButton/StartFunc.js";
+import { StartFunc as StartFuncSaveButton } from "./SaveButton/StartFunc.js";
 
 let StartFunc = () => {
-    //StartFuncSaveButton();
+    //console.log("wkddshclicked");
+    StartFuncSaveButton();
+    
 };
 
 export { StartFunc };
