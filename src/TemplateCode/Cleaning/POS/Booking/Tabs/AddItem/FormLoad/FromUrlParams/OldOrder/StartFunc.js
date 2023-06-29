@@ -1,5 +1,5 @@
-import { StartFunc as StartFuncNewOrder } from "./NewOrder/StartFunc.js";
-import { StartFunc as StartFuncOldOrder } from "./OldOrder/StartFunc.js";
+import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../../../FromLocalStorage/OrdersData/FromPk.js";
+import { StartFunc as StartFuncToLocalStorage } from "../../../../../../../../../../ToLocalStorage/ItemsInOrder/Bulk.js";
 
 let StartFunc = () => {
     // jFLocalBranchName();
@@ -8,11 +8,13 @@ let StartFunc = () => {
 
     let jFLocalOrderNumber = getUrlQueryParams({ inGetKey: "OrderNumber" });
 
-    if (jFLocalOrderNumber === null) {
-        StartFuncNewOrder();
-    } else {
-        StartFuncOldOrder();
+    let jVarLocalFromLocalStorage = StartFuncFromLocalStorage({ inPk: jFLocalOrderNumber });
+
+    if (jVarLocalFromLocalStorage.KTF === false) {
+        return false;
     };
+
+    StartFuncToLocalStorage({ inData: jVarLocalFromLocalStorage.JsonData.ItemsInOrder });
 };
 
 const jFLocalBranchName = () => {
