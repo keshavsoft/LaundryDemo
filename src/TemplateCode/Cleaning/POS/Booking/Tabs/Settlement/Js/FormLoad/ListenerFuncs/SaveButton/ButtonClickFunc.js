@@ -4,16 +4,18 @@ import { StartFunc as StartFuncCheckBeforeFetch } from "./CheckBeforeFetch.js";
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch.js";
 
 let StartFunc = async () => {
-   // let jVarFromCheck = StartFuncCheckBeforeFetch();
+    // let jVarFromCheck = StartFuncCheckBeforeFetch();
 
     if (StartFuncCheckBeforeFetch()) {
-        
-       let jVarLocalBodyData = StartFuncPreparePostData()
-console.log("sgiu",jVarLocalBodyData);
 
-        // let response = await StartFuncFetchFunc({
-        //     inBodyData: jVarLocalBodyData
-        // });
+        let jVarLocalBodyData = StartFuncPreparePostData()
+        console.log("sgiu", jVarLocalBodyData);
+
+        let response = await StartFuncFetchFunc({
+            inCashAmount: jVarLocalBodyData.CashAmount,
+            inCardAmount: jVarLocalBodyData.CardAmount,
+            inUPIAmount: jVarLocalBodyData.UPIAmount
+        });
 
         // StartFuncAfterFetch({
         //     inFromFetch: response, inCustomerName: jVarLocalBodyData.CustomerName
