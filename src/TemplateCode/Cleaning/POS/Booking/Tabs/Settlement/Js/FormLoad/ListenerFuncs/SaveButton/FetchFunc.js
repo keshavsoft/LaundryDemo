@@ -1,11 +1,12 @@
-import { StartFunc as StartFuncToLocalStorage } from "../../../../../../../../../../../ToLocalStorage/Customers/Single.js";
+import { StartFunc as StartFuncToLocalStorage } from "../../../../../../../../../../../ToLocalStorage/CheckOutData/Update.js";
 
-let StartFunc = ({ inBodyData }) => {
-    return jFToLocalStorage({ inBodyData });
+let StartFunc = ({inCashAmount,inCardAmount,inUPIAmount }) => {
+    return jFToLocalStorage({ inCashAmount,inCardAmount,inUPIAmount });
 };
 
-const jFToLocalStorage = ({ inBodyData }) => {
-    return StartFuncToLocalStorage({ inEntry: inBodyData });
+const jFToLocalStorage = ({ inCashAmount,inCardAmount,inUPIAmount }) => {
+
+    return StartFuncToLocalStorage({ inCashAmount,inCardAmount,inUPIAmount });
 };
 
 export { StartFunc };
