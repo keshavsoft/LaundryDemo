@@ -4,9 +4,6 @@ import { StartFunc as StartFuncAddToDom } from "../../AddToDom.js";
 import { StartFunc as StartFuncShowOnDom } from "../../../ShowOnDom/StartFunc.js";
 
 let StartFunc = () => {
-    // jFLocalBranchName();
-    // jFLocalShowCustomerMobile();
-    // jFLocalShowCustomerName();
 
     let jFLocalOrderNumber = getUrlQueryParams({ inGetKey: "OrderNumber" });
     StartFuncAddToDom({ inPk: jFLocalOrderNumber });
@@ -19,41 +16,6 @@ let StartFunc = () => {
     };
 
     StartFuncToLocalStorage({ inData: jVarLocalFromLocalStorage.JsonData.ItemsInOrder });
-};
-
-const jFLocalBranchName = () => {
-    let jFLocalBranchName = getUrlQueryParams({ inGetKey: "BranchName" });
-
-    let jVarLocalHtmlId = "BranchNameId";
-    let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
-};
-
-let jFLocalShowCustomerMobile = () => {
-    let jVarLocalHtmlId = "OrderInfoCustomerMobileId";
-
-    let jFLocalBranchName = getUrlQueryParams({ inGetKey: "CustomerMobile" });
-
-    let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
-};
-
-let jFLocalShowCustomerName = () => {
-    let jVarLocalHtmlId = "OrderInfoCustomerNameId";
-
-    let jFLocalBranchName = getUrlQueryParams({ inGetKey: "CustomerName" });
-
-    let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
-};
-
-let jFLocalShowOrderNumber = () => {
-    let jVarLocalHtmlId = "OrderNumberId";
-
-    let jFLocalBranchName = getUrlQueryParams({ inGetKey: "OrderNumber" });
-
-    let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
 };
 
 let getUrlQueryParams = ({ inGetKey }) => {

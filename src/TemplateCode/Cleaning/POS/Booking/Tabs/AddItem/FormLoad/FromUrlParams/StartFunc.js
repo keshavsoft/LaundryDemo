@@ -1,18 +1,30 @@
 import { StartFunc as StartFuncNewOrder } from "./NewOrder/StartFunc.js";
 import { StartFunc as StartFuncOldOrder } from "./OldOrder/StartFunc.js";
-
+import { StartFunc as StartFuncAddNew } from "./AddNew.js";
 let StartFunc = () => {
     // jFLocalBranchName();
     // jFLocalShowCustomerMobile();
     // jFLocalShowCustomerName();
 
     let jFLocalOrderNumber = getUrlQueryParams({ inGetKey: "OrderNumber" });
+    let jFLocalAddNew = getUrlQueryParams({ inGetKey: "AddNew" });
 
-    if (jFLocalOrderNumber === null) {
+    if(jFLocalAddNew === "true"){
+        console.log("loggedagain", jFLocalAddNew);
         StartFuncNewOrder();
-    } else {
-        StartFuncOldOrder();
+        StartFuncAddNew();  
+        
+    }
+    else{
+        if (jFLocalOrderNumber === null) {
+            StartFuncNewOrder();
+        } else {
+            StartFuncOldOrder();
+        };
+
     };
+
+    
 };
 
 const jFLocalBranchName = () => {
@@ -49,6 +61,7 @@ let jFLocalShowOrderNumber = () => {
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
     jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
 };
+
 
 let getUrlQueryParams = ({ inGetKey }) => {
     const queryString = window.location.search;

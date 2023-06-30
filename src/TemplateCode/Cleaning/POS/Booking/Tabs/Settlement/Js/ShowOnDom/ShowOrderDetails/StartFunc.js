@@ -6,6 +6,7 @@ const StartFunc = ({ inPk }) => {
     jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.JsonData.CustomerData.CustomerName });
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.JsonData.CustomerData.CustomerMobile });
     jFLocalOrderAmount({ inData: jVarLocalData.JsonData });
+    jFLocalBranchNameId({ inOrderInfoCustomerBranchId: jVarLocalData.JsonData.CustomerData.BranchName });
 };
 
 let jFLocalOrderAmount = ({ inData }) => {
@@ -24,11 +25,19 @@ let jFLocalOrderAmount = ({ inData }) => {
     jFLocalOrderAmountId({ inOrderAmountId: sum + sumOfAddOn });
 };
 
+
+
 let jFLocalCustomerName = ({ inOrderInfoCustomerNameId }) => {
     let jVarLocalHtmlId = "OrderInfoCustomerNameId";
     let jVarLocalOrderInfoCustomerNameId = document.getElementById(jVarLocalHtmlId);
 
     jVarLocalOrderInfoCustomerNameId.innerHTML = inOrderInfoCustomerNameId;
+};
+
+let jFLocalBranchNameId = ({ inOrderInfoCustomerBranchId }) => {
+    let jVarLocalHtmlId = 'BranchNameId';
+   let jVarLocalOrderInfoBranchNameId = document.getElementById(jVarLocalHtmlId);
+   jVarLocalOrderInfoBranchNameId.innerHTML = inOrderInfoCustomerBranchId;
 };
 
 let jFLocalOrderAmountId = ({ inOrderAmountId }) => {
@@ -42,4 +51,6 @@ let jFLocalOrderInfoCustomerMobileId = ({ inOrderInfoCustomerMobileId }) => {
     let jVarLocalOrderInfoCustomerMobileId = document.getElementById(jVarLocalHtmlId);
     jVarLocalOrderInfoCustomerMobileId.innerHTML = inOrderInfoCustomerMobileId;
 };
+
+
 export { StartFunc };
