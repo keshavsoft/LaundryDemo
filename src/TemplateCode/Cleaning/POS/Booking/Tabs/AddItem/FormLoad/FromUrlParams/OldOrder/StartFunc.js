@@ -4,8 +4,8 @@ import { StartFunc as StartFuncAddToDom } from "../../AddToDom.js";
 import { StartFunc as StartFuncShowOnDom } from "../../../ShowOnDom/StartFunc.js";
 
 let StartFunc = () => {
-
     let jFLocalOrderNumber = getUrlQueryParams({ inGetKey: "OrderNumber" });
+
     StartFuncAddToDom({ inPk: jFLocalOrderNumber });
     StartFuncShowOnDom({ inPk: jFLocalOrderNumber });
 

@@ -4,5 +4,6 @@
     "CustomersSubKey": "CustomerNames",
     "OrdersData": "OrdersData",
     "CheckOutData": "CheckOutData",
-    "ItemsInOrder": "ItemsInOrder"
+    "ItemsInOrder": "ItemsInOrder",
+    "AddOnData": "AddOnData"
 }

@@ -9,7 +9,7 @@ const jFLocalBranchName = () => {
 
     let jVarLocalHtmlId = "BranchNameId";
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
+    jVarLocalBranchNameId.value = jFLocalBranchName;
 };
 
 let jFLocalShowCustomerMobile = () => {
@@ -18,7 +18,7 @@ let jFLocalShowCustomerMobile = () => {
     let jFLocalBranchName = getUrlQueryParams({ inGetKey: "CustomerMobile" });
 
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
+    jVarLocalBranchNameId.value = jFLocalBranchName;
 };
 
 let jFLocalShowCustomerName = () => {
@@ -27,7 +27,7 @@ let jFLocalShowCustomerName = () => {
     let jFLocalBranchName = getUrlQueryParams({ inGetKey: "CustomerName" });
 
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalBranchNameId.innerHTML = jFLocalBranchName;
+    jVarLocalBranchNameId.value = jFLocalBranchName;
 };
 
 let getUrlQueryParams = ({ inGetKey }) => {
