@@ -3,10 +3,11 @@ import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../
 const StartFunc = ({ inPk }) => {
     let jVarLocalData = StartFuncFromLocalStorage({ inPk });
 
+    jFLocalCashAmountId({ inCashAmountId:jVarLocalData });
+
     jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.JsonData.CustomerData.CustomerName });
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.JsonData.CustomerData.CustomerMobile });
     jFLocalOrderAmount({ inData: jVarLocalData.JsonData });
-    jFLocalBranchNameId({ inOrderInfoCustomerBranchId: jVarLocalData.JsonData.CustomerData.BranchName });
 };
 
 let jFLocalOrderAmount = ({ inData }) => {
@@ -25,19 +26,11 @@ let jFLocalOrderAmount = ({ inData }) => {
     jFLocalOrderAmountId({ inOrderAmountId: sum + sumOfAddOn });
 };
 
-
-
 let jFLocalCustomerName = ({ inOrderInfoCustomerNameId }) => {
     let jVarLocalHtmlId = "OrderInfoCustomerNameId";
     let jVarLocalOrderInfoCustomerNameId = document.getElementById(jVarLocalHtmlId);
 
     jVarLocalOrderInfoCustomerNameId.innerHTML = inOrderInfoCustomerNameId;
-};
-
-let jFLocalBranchNameId = ({ inOrderInfoCustomerBranchId }) => {
-    let jVarLocalHtmlId = 'BranchNameId';
-   let jVarLocalOrderInfoBranchNameId = document.getElementById(jVarLocalHtmlId);
-   jVarLocalOrderInfoBranchNameId.innerHTML = inOrderInfoCustomerBranchId;
 };
 
 let jFLocalOrderAmountId = ({ inOrderAmountId }) => {
@@ -52,5 +45,10 @@ let jFLocalOrderInfoCustomerMobileId = ({ inOrderInfoCustomerMobileId }) => {
     jVarLocalOrderInfoCustomerMobileId.innerHTML = inOrderInfoCustomerMobileId;
 };
 
+let jFLocalCashAmountId = ({ inCashAmountId }) => {
+    let jVarLocalHtmlId = 'CashAmountId';
+    let jVarLocalCashAmountId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalCashAmountId.innerHTML = inCashAmountId;
+};
 
 export { StartFunc };

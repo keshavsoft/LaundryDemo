@@ -163,45 +163,11 @@
                                 <th width="50%">Customer Name</th>
                                 <th width="15%" style="text-align:center">City</th>
                                 <th width="15%" style="text-align:center">Mobile</th>
+                                <th width="15%" style="text-align: center">Order Details</th>
+                                <th width="15%" style="text-align: center">Settlement</th>
                                 <th width="15%"></th>
                             </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="CustomerName" id="CustomerNameId"
-                                            placeholder="" autofocus value="">
-                                        <div class="invalid-feedback">
-                                            Should not be empty!
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="City" id="CityId"
-                                            placeholder="" value="">
 
-                                        <div class="invalid-feedback">
-                                            Should not be empty!
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group">
-                                        <input class="form-control" type="Number" name="Mobile" id="MobileId"
-                                            placeholder="" value="">
-
-                                        <div class="invalid-feedback">
-                                            Should not be empty!
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <button type="button" id="CreateCustomerButtonId" class="btn btn-outline-info">
-                                        Create Customer
-                                    </button>
-                                </td>
-                            </tr>
                         </thead>
                         <tbody id="KCont1">
 
@@ -229,10 +195,8 @@
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
     <script id="HbsTemplateForFoldersOnly" type="text/x-handlebars">
-        {{log "----------" this}}
-
+        {{log "insidejhg------" this}}
                 {{#each this}}
-              {{log "inside------" this}}  
                 <tr class="{{RowClass}}" data-foldername="{{FolderName}}">
                     <td class="text-center">
                         {{ForSNo @index}}
@@ -241,10 +205,16 @@
                         {{CustomerData.CustomerName}}
                     </td>
                     <td>
-                        {{City}}
+                        {{CustomerData.BranchName}}
                     </td>
                     <td>
-                        {{Mobile}}
+                        {{CustomerData.CustomerMobile}}
+                    </td>
+                    <td>
+                        <a href="../../AddItem/AddItemCommon.html?OrderNumber={{@key}}" class="btn btn-success" >Show Order</a>
+                    </td>
+                    <td>
+                        <a href="../../Settlement/Settlement.html?OrderNumber={{@key}}" class="btn btn-success" >Settlement</a>
                     </td>
                    
                     <td style="text-align:right">
