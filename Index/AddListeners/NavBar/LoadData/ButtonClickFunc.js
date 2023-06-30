@@ -1,6 +1,6 @@
-import { StartFunc as StartFuncToLocalStorage } from "../../../../../ToLocalStorage/Items.js";
-import { StartFunc as StartFuncCustomers } from "../../../../../ToLocalStorage/Customers/Bulk.js";
-import { StartFunc as StartFuncOrdersData } from "../../../../../ToLocalStorage/OrdersData/Bulk.js";
+import { StartFunc as StartFuncToLocalStorage } from "../../../../ToLocalStorage/Items.js";
+import { StartFunc as StartFuncCustomers } from "../../../../ToLocalStorage/Customers/Bulk.js";
+import { StartFunc as StartFuncOrdersData } from "../../../../ToLocalStorage/OrdersData/BulkWithCheckForExistence.js";
 
 const jFForItems = async ({ indirHandle }) => {
     const ConfigHandle = await indirHandle.getFileHandle('Items.json');
@@ -22,15 +22,6 @@ const jFForCustomers = async ({ indirHandle }) => {
 
 const jFForOrdersData = async ({ indirHandle }) => {
     const ConfigHandle = await indirHandle.getFileHandle('OrdersData.json');
-    let jVarLocalgetFile = await ConfigHandle.getFile();
-
-    let jVarLocalgetFileData = await jVarLocalgetFile.text();
-
-    StartFuncOrdersData({ inData: JSON.parse(jVarLocalgetFileData) });
-};
-
-const jFForCheckOutData = async ({ indirHandle }) => {
-    const ConfigHandle = await indirHandle.getFileHandle('CheckOutData.json');
     let jVarLocalgetFile = await ConfigHandle.getFile();
 
     let jVarLocalgetFileData = await jVarLocalgetFile.text();
