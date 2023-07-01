@@ -1,16 +1,14 @@
 import { StartFunc as StartFuncItemsInCategory } from "./ToSelectFromLocalStorage.js";
 
-let StartFunc = () => {
-    let jVarLocalRadios = document.querySelectorAll('input[type=radio]');
+let StartFunc = ({ inCurrentTarget }) => {
+    let jVarLocalCurrentTarget = inCurrentTarget;
+    let jVarLocalCategory = jVarLocalCurrentTarget.dataset.category;
 
-    Array.from(jVarLocalRadios).forEach(link => {
-        link.addEventListener('click', function (event) {
-            let jVarLocalCurrentTarget = event.currentTarget;
-            let jVarLocalCategory = jVarLocalCurrentTarget.dataset.category;
+    StartFuncItemsInCategory({ inCategory: jVarLocalCategory });
 
-            StartFuncItemsInCategory({ inCategory: jVarLocalCategory });
-        });
-    });
+    var element = document.getElementById('ItemSelectId');
+    var event = new Event('change');
+    element.dispatchEvent(event);
 };
 
 export { StartFunc };
