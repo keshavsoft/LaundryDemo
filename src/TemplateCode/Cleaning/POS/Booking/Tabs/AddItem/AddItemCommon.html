@@ -24,14 +24,7 @@
             <include src="./src/components/Cleaning/POS/Booking/Tabs/ItemSelection.html"></include>
 
             <div class="row">
-                <div class="col">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="MenuId">
-                        <label class="form-check-label" for="MenuId">Menu</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
+            
                 <div class="col" id="MainContentTabId">
                     <div class="row">
                         <div class="" id="MenuTabId"></div>
@@ -39,88 +32,129 @@
                             <div class="card border-primary">
                                 <div class="card-body">
                                     <div class="tab-pane" id="MenItemsTabId" data-category="Men">
-                                        <div class="row mt-3">
-                                            <div class="col-md-1">
-                                                <label for="inputEmail4" class="form-label">Item#</label>
-                                                <input type="number" class="form-control ItemSerialClass" disabled
-                                                    min="1" max="5">
-
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-floating">
-                                                    <select class="form-select ItemSelect" id="ItemSelectId"
-                                                        aria-label="Floating label select example" name="ItemName"
-                                                        autofocus>
-                                                        <option selected>Open this select menu</option>
-                                                    </select>
-                                                    <label for="ItemSelectId">Select Item</label>
-                                                </div>
-                                            </div>
-                                            <div class="col" id="MenFrequentItems">
-                                            </div>
-                                        </div>
-                                        <div class="row mt-1">
-                                            <div class="form-floating" style="display: none;">
-                                                <select class="form-select WashTypeClass" id="WashSelectId"
-                                                    aria-label="Floating label select example" name="WashType">
-                                                    <option>Open this select menu</option>
-                                                    <option value="1" selected>DryWash</option>
-                                                </select>
-                                                <label for="WashSelectId">Select Wash</label>
-                                            </div>
-
-                                            <div class="col-md-2">
-                                                <div class="form-floating">
-                                                    <input type="number" class="form-control RateClass" min="1"
-                                                        max="200" name="Rate">
-                                                    <label for="RateId">Rate</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-floating">
-                                                    <input type="number" class="form-control PcsClass" value="1" min="1"
-                                                        name="Pcs">
-                                                    <label for="PcsId">Pcs</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-floating">
-                                                    <select class="form-select FactorySelectClass"
-                                                        aria-label="Floating label select example" name="WashType">
-                                                        <option>Open this select menu</option>
-                                                        <option value="1" selected>GD</option>
-                                                        <option value="2" selected>ANF</option>
-                                                    </select>
-                                                    <label>Select Factory</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-floating">
-                                                    <input class="form-control DeliveryDateTimeClass" tabindex="-1"
-                                                        type="datetime-local">
-                                                    <label for="PcsId">Delivery Date</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <button type="button" class="btn btn-success AddItemButtonClass"
-                                                    id="AddItemButtonId">Add
-                                                    Item</button>
-                                            </div>
-                                            <div class="col-2">
-                                                <div class="form-check form-switch">
-                                                    <input class="form-check-input AddOnMenuClass" type="checkbox"
-                                                        role="switch" id="AddOnMenuId">
-                                                    <label class="form-check-label" for="AddOnMenuId">Add-Ons</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                         <div class="row">
+                                            <div class="col-2 fs-5">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        Men
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                                        checked>
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        Women
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="KidsRadioId">
+                                                    <label class="form-check-label" for="KidsRadioId">
+                                                        Kids
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="KidsRadioId">
+                                                    <label class="form-check-label" for="KidsRadioId">
+                                                        HOusehold
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="KidsRadioId">
+                                                    <label class="form-check-label" for="KidsRadioId">
+                                                        Others
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-10">
+                                                <div class="row mt-3">
+                                                    <div class="col-md-1">
+                                                        <label for="inputEmail4" class="form-label">Item#</label>
+                                                        <input type="number" class="form-control ItemSerialClass"
+                                                            disabled min="1" max="5">
 
-                                        </div>
-                                        <div class="row">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-floating">
+                                                            <select class="form-select ItemSelect" id="ItemSelectId"
+                                                                aria-label="Floating label select example"
+                                                                name="ItemName" autofocus>
+                                                                <option selected>Open this select menu</option>
+                                                            </select>
+                                                            <label for="ItemSelectId">Select Item</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col" id="MenFrequentItems">
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-1">
+                                                    <div class="form-floating" style="display: none;">
+                                                        <select class="form-select WashTypeClass" id="WashSelectId"
+                                                            aria-label="Floating label select example" name="WashType">
+                                                            <option>Open this select menu</option>
+                                                            <option value="1" selected>DryWash</option>
+                                                        </select>
+                                                        <label for="WashSelectId">Select Wash</label>
+                                                    </div>
 
+                                                    <div class="col-md-2">
+                                                        <div class="form-floating">
+                                                            <input type="number" class="form-control RateClass" min="1"
+                                                                max="200" name="Rate">
+                                                            <label for="RateId">Rate</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="form-floating">
+                                                            <input type="number" class="form-control PcsClass" value="1"
+                                                                min="1" name="Pcs">
+                                                            <label for="PcsId">Pcs</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="form-floating">
+                                                            <select class="form-select FactorySelectClass"
+                                                                aria-label="Floating label select example"
+                                                                name="WashType">
+                                                                <option>Open this select menu</option>
+                                                                <option value="1" selected>GD</option>
+                                                                <option value="2" selected>ANF</option>
+                                                            </select>
+                                                            <label>Select Factory</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="form-floating">
+                                                            <input class="form-control DeliveryDateTimeClass"
+                                                                tabindex="-1" type="datetime-local">
+                                                            <label for="PcsId">Delivery Date</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <button type="button" class="btn btn-success AddItemButtonClass"
+                                                            id="AddItemButtonId">Add
+                                                            Item</button>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input AddOnMenuClass"
+                                                                type="checkbox" role="switch" id="AddOnMenuId">
+                                                            <label class="form-check-label"
+                                                                for="AddOnMenuId">Add-Ons</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+
+                                                </div>
+                                                <div class="row">
+
+                                                </div>
+                                            </div>
                                         </div>
+
+
                                     </div>
                                 </div>
 
