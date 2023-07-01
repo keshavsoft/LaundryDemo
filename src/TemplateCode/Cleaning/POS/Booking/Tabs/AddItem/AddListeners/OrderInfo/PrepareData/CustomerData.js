@@ -9,21 +9,21 @@ let StartFunc = () => {
 const jFLocalBranchName = () => {
     let jVarLocalHtmlId = "BranchNameId";
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
-    return jVarLocalBranchNameId.innerHTML;
+    return jVarLocalBranchNameId.value;
 };
 
 let jFLocalShowCustomerMobile = () => {
     let jVarLocalHtmlId = "OrderInfoCustomerMobileId";
 
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
-    return jVarLocalBranchNameId.innerHTML;
+    return jVarLocalBranchNameId.value;
 };
 
 let jFLocalShowCustomerName = () => {
     let jVarLocalHtmlId = "OrderInfoCustomerNameId";
 
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
-    return jVarLocalBranchNameId.innerHTML;
+    return jVarLocalBranchNameId.value;
 };
 
 export { StartFunc }
