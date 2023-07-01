@@ -1,12 +1,12 @@
 let StartFunc = () => {
     return {
        "BranchName": jFLocalBranchName(),
-       "CurrentDate": jFLocalShowDate()
+       "Currentdateandtime": jFLocalShowDate()
     };
 };
 
 let jFLocalShowDate = () => {
-    let jVarLocalHtmlId = "CurrentDate";
+    let jVarLocalHtmlId = "Currentdateandtime";
 
     let jVarLocalBranchNameId = document.getElementById(jVarLocalHtmlId);
     return jVarLocalBranchNameId.value;

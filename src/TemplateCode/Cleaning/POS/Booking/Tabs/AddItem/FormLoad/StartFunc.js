@@ -51,7 +51,7 @@ let jFLocalCurrentDateTime = () => {
 
 
 let jFLocalCurrentDateTimeToday = () => {
-    let jVarLocalHtmlId= "CurrentDate";
+    let jVarLocalHtmlId= "Currentdateandtime";
     let jVarLocalDateId = document.getElementById(jVarLocalHtmlId);
     let jVarLocalDateValue = jFLocalCurrentDateTime1();
     console.log("gggfddtfyg", jVarLocalDateValue);
@@ -76,7 +76,7 @@ let jFLocalCurrentDateTime1 = () => {
 
     // let ss = date.getSeconds();
 
-    return `${yyyy}-${MM}-${dd}`;
+    return `${yyyy}-${MM}-${dd}T${HH}:${mm}:${ss}`;
 };
 
 export { StartFunc }
