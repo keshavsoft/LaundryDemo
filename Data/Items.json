@@ -15,32 +15,74 @@
     },
     {
         "pk": 3,
+        "Category": "Women",
         "ItemName": "Women Shirt",
         "DryWashRate": 70,
         "Pcs": 200
     },
     {
         "pk": 16,
+        "Category": "Men",
         "ItemName": "Men Pant",
         "DryWashRate": 70,
         "Pcs": 300
     },
     {
         "pk": 18,
+        "Category": "Men",
         "ItemName": "Men Jeans",
         "DryWashRate": 100,
         "Pcs": 250
     },
     {
         "pk": 20,
+        "Category": "Men",
         "ItemName": "Men Jacket",
         "DryWashRate": 100,
         "Pcs": 250
     },
     {
         "pk": 21,
+        "Category": "Kids",
         "ItemName": "Kids Shirt",
         "DryWashRate": 50,
         "Pcs": 1600
+    },
+    {
+        "pk": 22,
+        "Category": "Kids",
+        "ItemName": "Kids Pant",
+        "DryWashRate": 40,
+        "Pcs": 1000
+    },
+    {
+        "pk": 23,
+        "Category": "Household",
+        "ItemName": "Blanket",
+        "DryWashRate": 100,
+        "Pcs": 100
+    },
+    {
+        "pk": 24,
+        "Category": "Household",
+        "ItemName": "Pillow Covers",
+        "DryWashRate": 30,
+        "Pcs": 400
+    },
+    {
+        "pk": 25,
+        "Category": "Others",
+        "ItemName": "Restaurant Curtains",
+        "DryWashRate": 200,
+        "Pcs": 300
+    },
+    {
+        "pk": 26,
+        "Category": "Others",
+        "ItemName": "Restaurant Mats",
+        "DryWashRate": 150,
+        "Pcs": 400
     }
+
+
 ]
