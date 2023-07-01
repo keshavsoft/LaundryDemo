@@ -31,13 +31,13 @@ let jFLocalCustomerName = ({ inOrderInfoCustomerNameId }) => {
     let jVarLocalHtmlId = "OrderInfoCustomerNameId";
     let jVarLocalOrderInfoCustomerNameId = document.getElementById(jVarLocalHtmlId);
 
-    jVarLocalOrderInfoCustomerNameId.innerHTML = inOrderInfoCustomerNameId;
+    jVarLocalOrderInfoCustomerNameId.value = inOrderInfoCustomerNameId;
 };
 
 let jFLocalBranchNameId = ({ inOrderInfoCustomerBranchId }) => {
     let jVarLocalHtmlId = 'BranchNameId';
    let jVarLocalOrderInfoBranchNameId = document.getElementById(jVarLocalHtmlId);
-   jVarLocalOrderInfoBranchNameId.innerHTML = inOrderInfoCustomerBranchId;
+   jVarLocalOrderInfoBranchNameId.value = inOrderInfoCustomerBranchId;
 };
 
 let jFLocalOrderAmountId = ({ inOrderAmountId }) => {
@@ -49,7 +49,7 @@ let jFLocalOrderAmountId = ({ inOrderAmountId }) => {
 let jFLocalOrderInfoCustomerMobileId = ({ inOrderInfoCustomerMobileId }) => {
     let jVarLocalHtmlId = 'OrderInfoCustomerMobileId';
     let jVarLocalOrderInfoCustomerMobileId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalOrderInfoCustomerMobileId.innerHTML = inOrderInfoCustomerMobileId;
+    jVarLocalOrderInfoCustomerMobileId.value = inOrderInfoCustomerMobileId;
 };
 
 
