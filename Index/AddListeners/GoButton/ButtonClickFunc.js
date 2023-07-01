@@ -1,4 +1,5 @@
 import ConfigJson from "../../../Config.json" assert {type: 'json'};
+import { StartFunc as StartFuncToUrl } from "./ToUrl.js";
 
 const StartFunc = () => {
     let jVarLocalHtmlId = "ScanId";
@@ -7,16 +8,16 @@ const StartFunc = () => {
     let jVarLocalArray = jVarLocalScanIdValue.split(":");
     let jVarLocalCustomerName = jVarLocalArray[0].trim();
     let jVarLocalCustomerMobile = "";
-    
+
 
     if (jVarLocalCustomerName.length > 1) {
         jVarLocalCustomerMobile = jVarLocalArray[1].trim()
     };
 
-    jFLocalToUrl({ inCustomerName: jVarLocalCustomerName, inCustomerMobile: jVarLocalCustomerMobile});
+    StartFuncToUrl({ inCustomerName: jVarLocalCustomerName, inCustomerMobile: jVarLocalCustomerMobile });
 };
 
-let jFLocalToUrl = ({ inCustomerName, inCustomerMobile}) => {
+let jFLocalToUrl = ({ inCustomerName, inCustomerMobile }) => {
     let jVarLocalToUrl = "/public/Html/Cleaning/POS/Booking/Tabs/AddItem/AddItemCommon.html";
     let jVarLocalBranchName = ConfigJson.BranchName;
     let jVarLocalAddNew = "true";

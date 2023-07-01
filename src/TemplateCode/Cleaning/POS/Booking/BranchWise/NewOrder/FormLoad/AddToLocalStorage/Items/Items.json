@@ -1,14 +1,12 @@
 [
     {
         "pk": 1,
-        "Category": "Women",
         "ItemName": "Women Saree",
         "DryWashRate": 60,
         "Pcs": 200
     },
     {
         "pk": 2,
-        "Category": "Men",
         "ItemName": "Men Shirt",
         "DryWashRate": 60,
         "Pcs": 200
