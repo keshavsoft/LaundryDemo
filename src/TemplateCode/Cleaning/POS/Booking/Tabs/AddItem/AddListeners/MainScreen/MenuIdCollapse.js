@@ -2,7 +2,7 @@ import { StartFunc as StartFuncMenuIdChange } from "./MenuIdChange.js";
 import { StartFunc as StartFuncAddOnMenuIdChange } from "./AddOnMenuIdChange.js";
 
 const StartFunc = () => {
-    StartFuncMenuIdChange();
+    // StartFuncMenuIdChange();
     StartFuncAddOnMenuIdChange();
 };
 

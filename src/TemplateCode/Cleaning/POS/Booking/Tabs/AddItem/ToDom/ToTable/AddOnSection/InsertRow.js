@@ -1,5 +1,7 @@
 import { DeleteFromPk } from "../../../LocalStorageFunc/AddOnData/DeleteFunc.js";
 import { StartFunc as StartFuncFrom } from "./StartFunc.js";
+import { StartFunc as StartFuncToDomToOrderItems } from "../../../ToDom/ToTable/ToOrderItems.js";
+
 
 let StartFunc = ({ inTableBodyId, inAddOnService, inAddOnRate, inAddOnItemSerial, inAddOnImageSerial, inNewPk }) => {
     var table = inTableBodyId;
@@ -49,6 +51,15 @@ const jFLocalDeleteFunc = ({ inEvent, inItemSerial }) => {
     let jVarLocalFromDelete = DeleteFromPk({ inPK: jVarLocalPk });
 
     if (jVarLocalFromDelete) {
+
+
+
+
+
+
+
+        StartFuncToDomToOrderItems();
+
         StartFuncFrom({ inItemSerial });
     };
 };
