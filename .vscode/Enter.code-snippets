@@ -66,7 +66,7 @@
 		"scope": "javascript,typescript",
 		"prefix": "KMockHtmlAssignFromDom",
 		"body": [
-			"let jFLocal$1 = () => {",
+			"let jFLocalFromDom$1 = () => {",
 			"	let jVarLocalHtml$1 = '$1';",
 			"   let jVarHtml$1 = document.getElementById(jVarLocalHtml$1);",
 			"   let jVarHtml$1Value = jVarHtml$1.value.trim();",

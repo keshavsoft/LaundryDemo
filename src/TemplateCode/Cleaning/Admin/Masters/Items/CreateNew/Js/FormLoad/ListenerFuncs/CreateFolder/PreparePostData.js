@@ -7,7 +7,7 @@ let StartFunc = () => {
     return {
         // Category: jVarLocalFolderName,
         ItemName: jVarLocalFolderName,
-        // DryWashRate: jVarLocalFolderName,
+        // DryWashRate: jFLocalRate.jVarLocalFolderName,
         // Pcs: jVarLocalFolderName
         ...jFLocalCategory(),
         ...jFLocalRate(),

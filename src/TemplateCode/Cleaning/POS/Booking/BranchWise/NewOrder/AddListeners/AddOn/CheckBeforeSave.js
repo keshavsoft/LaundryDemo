@@ -1,6 +1,62 @@
 import { StartFunc as StartFuncFromLocalStorage } from "../../FromLocalStorage/ItemsInOrder.js";
-
+import { StartFunc as StartFuncFromPk } from "./../../../../../../../../../FromLocalStorage/ItemsInOrder/FromPk.js";
 let StartFunc = () => {
+
+    let jvarLocalOption = document.getElementById("AddOnServiceId").value;
+    if (jvarLocalOption === '8') {
+        return jFLocalForDiscount();
+    }
+    else {
+        return jFLocalForAddOn();
+
+    }
+
+};
+
+let jFLocalForDiscount = () => {
+    let jVarLocalAddRate = jFLocalFromDomAddOnRateId();
+    console.log("jVarLocalAddRate:", jVarLocalAddRate);
+    if (jVarLocalAddRate >= 0) {
+        console.log("afhg");
+        return false;
+    }
+
+    else {
+        let jVarLocalItemId = jFLocalFromDomAddOnItemId();
+        let localFromPk = StartFuncFromPk({ inPk: jVarLocalItemId });
+        let jvarLocalRate = localFromPk.Rate;
+        let jVarLocalPercentage = (jVarLocalAddRate / jvarLocalRate) * 100;
+
+        console.log("jVarLocalPercentage:", Math.abs(jVarLocalPercentage));
+        if (Math.abs(jVarLocalPercentage) > 10) {
+            console.log("Invalid");
+            return false;
+        }
+        else {
+            console.log("Valid");
+            return true;
+        }
+
+
+    };
+}
+
+
+let jFLocalFromDomAddOnRateId = () => {
+    let jVarLocalHtmlAddOnRateId = 'AddOnRateId';
+    let jVarHtmlAddOnRateId = document.getElementById(jVarLocalHtmlAddOnRateId);
+    let jVarHtmlAddOnRateIdValue = jVarHtmlAddOnRateId.value.trim();
+    return jVarHtmlAddOnRateIdValue;
+};
+
+let jFLocalFromDomAddOnItemId = () => {
+    let jVarLocalHtmlAddOnItemId = 'AddOnItemId';
+    let jVarHtmlAddOnItemId = document.getElementById(jVarLocalHtmlAddOnItemId);
+    let jVarHtmlAddOnItemIdValue = jVarHtmlAddOnItemId.value.trim();
+    return jVarHtmlAddOnItemIdValue;
+};
+
+let jFLocalForAddOn = () => {
     let jVarLocalAddOnItemId = document.getElementById("AddOnItemId");
 
     let jVarLocaljVarLocalAddOnItemIdValue = jVarLocalAddOnItemId.value;
@@ -14,7 +70,6 @@ let StartFunc = () => {
 
     return true;
 };
-
 const jFLocalForAddOnService = () => {
     let jVarLocalHtmlId = "AddOnServiceId";
     let jVarLocalAddOnServiceId = document.getElementById(jVarLocalHtmlId);
