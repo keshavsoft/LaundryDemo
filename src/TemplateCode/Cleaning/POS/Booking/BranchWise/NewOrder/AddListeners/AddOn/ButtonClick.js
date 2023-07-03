@@ -15,7 +15,7 @@ let StartFunc = () => {
 let jFLocalButtonClick = (event) => {
     event.preventDefault();
 
-    let jVarLocalFromCheck = StartFuncCheckBeforeSave();
+    let jVarLocalFromCheck = StartFuncCheckBeforeSave({ inEvent: event });
 
     if (jVarLocalFromCheck) {
         let jVarLocalDataToInsert = StartFuncPrepareData();
