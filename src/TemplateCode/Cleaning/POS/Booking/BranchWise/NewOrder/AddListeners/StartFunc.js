@@ -11,7 +11,7 @@ let StartFunc = () => {
     StartFuncAddOn();
     StartFuncOnChange();
     StartFuncMainScreen();
-    StartFuncCategoryRadio();
+    //StartFuncCategoryRadio();
 
     // let jVarLocalRadios = document.querySelectorAll('input[type=radio]');
 

@@ -1,17 +1,7 @@
-import { StartFunc as StartFuncFromLocalStorage } from "../../FromLocalStorage/Items.js";
+import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../../../FromLocalStorage/Items/FilterCategory.js";
 
-let StartFunc = () => {
-    var element = document.getElementById('MenRadioId');
-    var event = new Event('click');
-    element.dispatchEvent(event);
-
-    var element = document.getElementById('ItemSelectId');
-    var event = new Event('change');
-    element.dispatchEvent(event);
-};
-
-let StartFunc1 = () => {
-    let jVarLocalFromLocalStorage = StartFuncFromLocalStorage();
+let StartFunc = ({ inCategory }) => {
+    let jVarLocalFromLocalStorage = StartFuncFromLocalStorage({inCategory});
 
     jFCommonSelectFill({
         inData: jVarLocalFromLocalStorage,
