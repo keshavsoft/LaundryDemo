@@ -1,10 +1,13 @@
 import { StartFunc as StartFuncFromLocalStorage } from "../../FromLocalStorage/ItemsInOrder.js";
 import { StartFunc as StartFuncFromPk } from "./../../../../../../../../../FromLocalStorage/ItemsInOrder/FromPk.js";
-let StartFunc = () => {
+let StartFunc = ({ inEvent }) => {
+    console.log("inEvent:", inEvent);
+    let jVarLocalCurrentTarget = inEvent.currentTarget;
+    let jVarLocalClosestCardHeader = jVarLocalCurrentTarget.closest(".card-header");
 
     let jvarLocalOption = document.getElementById("AddOnServiceId").value;
     if (jvarLocalOption === '8') {
-        return jFLocalForDiscount();
+        return jFLocalForDiscount({ inCardHeader: jVarLocalClosestCardHeader });
     }
     else {
         return jFLocalForAddOn();
@@ -13,7 +16,7 @@ let StartFunc = () => {
 
 };
 
-let jFLocalForDiscount = () => {
+let jFLocalForDiscount = ({ inCardHeader }) => {
     let jVarLocalAddRate = jFLocalFromDomAddOnRateId();
     console.log("jVarLocalAddRate:", jVarLocalAddRate);
     if (jVarLocalAddRate >= 0) {
@@ -29,11 +32,13 @@ let jFLocalForDiscount = () => {
 
         console.log("jVarLocalPercentage:", Math.abs(jVarLocalPercentage));
         if (Math.abs(jVarLocalPercentage) > 10) {
-            console.log("Invalid");
+            inCardHeader.style = "background-color: red;"
             return false;
         }
         else {
             console.log("Valid");
+            inCardHeader.style = "background-color:"
+
             return true;
         }
 
