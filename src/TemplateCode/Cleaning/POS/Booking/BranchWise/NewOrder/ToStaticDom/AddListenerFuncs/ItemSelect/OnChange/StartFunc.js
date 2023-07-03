@@ -1,17 +1,27 @@
-import { StartFunc as StartFuncFromLocalStorage } from "../../FromLocalStorage/MenItems.js";
+import { StartFunc as StartFuncFromLocalStorage } from "../../../../FromLocalStorage/MenItems.js";
 
 let StartFunc = () => {
-
-    let jVarLocalItemSelectId = document.getElementById("ItemSelectId");
-    if (jVarLocalItemSelectId === null === false) jVarLocalItemSelectId.addEventListener("change", (event) => {
-        jFLocalItemSelectChange({
-            inEvent: event,
-            inLocalStorageKey: "Items"
-        });
-    });
-
+    jFLocalMenTab();
 };
 
+let jFLocalMenTab = () => {
+    let jVarLocalMenItemsTabId = document.getElementById("MenItemsTabId");
+
+    if (jVarLocalMenItemsTabId === null === false) {
+        let jVarLocalItemSelect = jVarLocalMenItemsTabId.querySelector(".ItemSelect");
+
+//         var element = document.getElementsByClassName('ItemSelect')[1];
+// var event = new Event('change');
+// element.dispatchEvent(event);
+
+        if (jVarLocalItemSelect === null === false) jVarLocalItemSelect.addEventListener("change", (event) => {
+            jFLocalItemSelectChange({
+                inEvent: event,
+                inLocalStorageKey: "Items"
+            });
+        });
+    };
+};
 
 let jFLocalItemSelectChange = ({ inEvent }) => {
     try {
