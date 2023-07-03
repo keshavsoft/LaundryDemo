@@ -5,9 +5,24 @@ let StartFunc = () => {
     let jVarLocalFolderName = jVarCreateFolderInputId.value.trim();
 
     return {
+        // Category: jVarLocalFolderName,
         ItemName: jVarLocalFolderName,
+        // DryWashRate: jVarLocalFolderName,
+        // Pcs: jVarLocalFolderName
+        ...jFLocalCategory(),
         ...jFLocalRate(),
         ...jFLocalPcs()
+    };
+};
+
+let jFLocalCategory = () => {
+    let jVarLocalHtmlCategoryInputId = "CategoryInputId";
+    let jVarCreateFolderInputId = document.getElementById(jVarLocalHtmlCategoryInputId);
+
+    let jVarLocalFolderName = jVarCreateFolderInputId.value.trim();
+
+    return {
+        Category: jVarLocalFolderName
     };
 };
 
