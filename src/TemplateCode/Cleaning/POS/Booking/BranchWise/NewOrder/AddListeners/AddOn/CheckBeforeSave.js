@@ -8,22 +8,15 @@ let StartFunc = ({ inEvent }) => {
     let jVarLocalCurrentTarget = inEvent.currentTarget;
     let jVarLocalClosestCardHeader = jVarLocalCurrentTarget.closest(".card-header");
 
-    // let jVarLocalDiscountCheck = jfLocalDiscountCheck();
-    // if (jVarLocalDiscountCheck === false) {
-    //     return false;
-    // };
-    let jVarLocalAddOnItemId=jFLocalFromDomAddOnItemId();
-    StartFuncFromAddOns({inAddOnItemSerial: jVarLocalAddOnItemId});
+    let jVarLocalAddOnItemId = jFLocalFromDomAddOnItemId();
 
     let jvarLocalOption = document.getElementById("AddOnServiceId").value;
 
     if (jvarLocalOption === '8') {
-        return jFLocalForDiscount({ inCardHeader: jVarLocalClosestCardHeader });
+        return jFLocalIfOption8({ AddOnItemId: jVarLocalAddOnItemId, ClosestCardHeader: jVarLocalClosestCardHeader });
     } else {
         return jFLocalForAddOn();
     };
-
-
 };
 
 let jFLocalForDiscount = ({ inCardHeader }) => {
@@ -115,6 +108,22 @@ let jfLocalDiscountCheck = () => {
         return false;
     };
     return true;
+};
+
+let jFLocalIfOption8 = ({ AddOnItemId, ClosestCardHeader }) => {
+
+    let jVarLocalDataFromAddOns = StartFuncFromAddOns({ inAddOnItemSerial: AddOnItemId });
+
+    let jVarLocalFindData = jVarLocalDataFromAddOns.find(element => {
+
+        return element.AddOnService === "Discount";
+    });
+
+    if (jVarLocalFindData === undefined === false) {
+        return false;
+    };
+    return jFLocalForDiscount({ inCardHeader: ClosestCardHeader });
+
 };
 
 export { StartFunc };

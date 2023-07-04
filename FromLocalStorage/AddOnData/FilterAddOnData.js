@@ -1,14 +1,14 @@
 import { StartFunc as StartFuncBulk } from "./Bulk.js";
 
 let StartFunc = ({ inAddOnItemSerial }) => {
+    
     let jVarLocalFromLocalStorage = StartFuncBulk();
-    console.log("abcd",jVarLocalFromLocalStorage);
-    // let jVarLocalFiletered = jVarLocalFromLocalStorage.filter(element => {
-    //     return element.AddOnItemSerial === inAddOnItemSerial;
-    // });
+    let jVarLocalValue = Object.values(jVarLocalFromLocalStorage);
+    let localFilterData = jVarLocalValue.filter(element => {
+        return element.AddOnItemSerial === parseInt(inAddOnItemSerial)
+    });
 
-    //return jVarLocalFiletered;
-    return jVarLocalFromLocalStorage;
+    return localFilterData;
 };
 
 export { StartFunc };
