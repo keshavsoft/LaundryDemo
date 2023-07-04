@@ -1,8 +1,8 @@
-import { StartFunc as StartFuncAddOnMenuIdChange } from "./AddOnMenuIdChange.js";
+import { StartFunc as StartFuncChangeFunc } from "./AddOnMenuId/ChangeFunc.js";
 
 const StartFunc = () => {
     // StartFuncMenuIdChange();
-    StartFuncAddOnMenuIdChange();
+    StartFuncChangeFunc();
 };
 
 export { StartFunc };

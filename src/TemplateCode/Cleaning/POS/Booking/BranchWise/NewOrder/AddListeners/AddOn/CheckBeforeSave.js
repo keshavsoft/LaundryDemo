@@ -1,36 +1,42 @@
 import { StartFunc as StartFuncFromLocalStorage } from "../../FromLocalStorage/ItemsInOrder.js";
 import { StartFunc as StartFuncFromPk } from "./../../../../../../../../../FromLocalStorage/ItemsInOrder/FromPk.js";
+import { StartFunc as StartFuncFromAddOnsAll } from "../../FromLocalStorage/FromAddOnsAll.js";
+import { StartFunc as StartFuncFromAddOns } from "../../../../../../../../../FromLocalStorage/AddOnData/FilterAddOnData.js";
+
+
 let StartFunc = ({ inEvent }) => {
-    console.log("inEvent:", inEvent);
     let jVarLocalCurrentTarget = inEvent.currentTarget;
     let jVarLocalClosestCardHeader = jVarLocalCurrentTarget.closest(".card-header");
 
+    // let jVarLocalDiscountCheck = jfLocalDiscountCheck();
+    // if (jVarLocalDiscountCheck === false) {
+    //     return false;
+    // };
+    let jVarLocalAddOnItemId=jFLocalFromDomAddOnItemId();
+    StartFuncFromAddOns({inAddOnItemSerial: jVarLocalAddOnItemId});
+
     let jvarLocalOption = document.getElementById("AddOnServiceId").value;
+
     if (jvarLocalOption === '8') {
         return jFLocalForDiscount({ inCardHeader: jVarLocalClosestCardHeader });
-    }
-    else {
+    } else {
         return jFLocalForAddOn();
+    };
 
-    }
 
 };
 
 let jFLocalForDiscount = ({ inCardHeader }) => {
-    let jVarLocalAddRate = jFLocalFromDomAddOnRateId();
-    console.log("jVarLocalAddRate:", jVarLocalAddRate);
-    if (jVarLocalAddRate >= 0) {
-        console.log("afhg");
-        return false;
-    }
 
-    else {
+    let jVarLocalAddRate = jFLocalFromDomAddOnRateId();
+    if (jVarLocalAddRate >= 0) {
+        return false;
+    } else {
         let jVarLocalItemId = jFLocalFromDomAddOnItemId();
         let localFromPk = StartFuncFromPk({ inPk: jVarLocalItemId });
         let jvarLocalRate = localFromPk.Rate;
         let jVarLocalPercentage = (jVarLocalAddRate / jvarLocalRate) * 100;
 
-        console.log("jVarLocalPercentage:", Math.abs(jVarLocalPercentage));
         if (Math.abs(jVarLocalPercentage) > 10) {
             inCardHeader.style = "background-color: red;"
             return false;
@@ -40,11 +46,10 @@ let jFLocalForDiscount = ({ inCardHeader }) => {
             inCardHeader.style = "background-color:"
 
             return true;
-        }
-
-
+        };
     };
-}
+
+};
 
 
 let jFLocalFromDomAddOnRateId = () => {
@@ -88,6 +93,28 @@ const jFLocalForAddOnService = () => {
         jVarLocalAddOnServiceId.classList.remove("is-invalid");
         jVarLocalAddOnServiceId.classList.add("is-valid");
     };
+};
+
+let jfLocalDiscountCheck1 = () => {
+    let jVarLocalItemId = jFLocalFromDomAddOnItemId();
+
+    let jVarLocalFromAddOnData = StartFuncFromAddOnsAll();
+
+    if (jVarLocalItemId in jVarLocalFromAddOnData) {
+        return false;
+    };
+    return true;
+};
+
+let jfLocalDiscountCheck = () => {
+    let jVarLocalItemId = jFLocalFromDomAddOnItemId();
+
+    let jVarLocalFromAddOnData = StartFuncFromAddOnsAll();
+
+    if (jVarLocalItemId in jVarLocalFromAddOnData) {
+        return false;
+    };
+    return true;
 };
 
 export { StartFunc };
