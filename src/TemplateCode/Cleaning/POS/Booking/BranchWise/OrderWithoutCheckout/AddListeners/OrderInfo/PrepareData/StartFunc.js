@@ -6,10 +6,7 @@ const StartFunc = () => {
     let jVarLocalToLocalStorage = {};
 
     jVarLocalToLocalStorage = {
-        ...StartFuncPresentOrderData(),
-        CustomerData: StartFuncCustomerData(),
         OrderData: StartFuncOrderData()
-
     };
 
     return jVarLocalToLocalStorage;
