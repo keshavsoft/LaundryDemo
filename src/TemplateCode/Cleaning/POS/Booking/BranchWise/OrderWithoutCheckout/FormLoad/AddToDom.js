@@ -7,14 +7,14 @@ let StartFunc = ({ inPk }) => {
     StartFuncWashTypeFill();
     StartFuncItemsToSelect();
     StartFuncFactoriesToSelect();
-    jFLocalOrderNumberId({inOrderNumberId: inPk});
+    jFLocalOrderNumberId({ inOrderNumberId: inPk });
     StartFuncToDomToOrderItems();
 };
 
 let jFLocalOrderNumberId = ({ inOrderNumberId }) => {
     let jVarLocalHtmlId = 'OrderNumberId';
-   let jVarLocalOrderNumberId = document.getElementById(jVarLocalHtmlId);
-   jVarLocalOrderNumberId.innerHTML = inOrderNumberId;
+    let jVarLocalOrderNumberId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalOrderNumberId.innerHTML = inOrderNumberId;
 };
 
 
