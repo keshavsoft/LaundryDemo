@@ -6,7 +6,6 @@ let StartFunc = ({ inBranchName, inOrderNumber }) => {
     myUrlWithParams.searchParams.append("OrderNumber", inOrderNumber);
     window.location.href = myUrlWithParams.href;
 
-    // window.location.href = myUrlWithParams.href.replace("/AddItem/AddItemCommon", "/Settlement/Settlement");
 };
 
 export { StartFunc }

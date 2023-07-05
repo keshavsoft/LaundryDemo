@@ -5,7 +5,6 @@ import { StartFunc as StartFuncShowOnDom } from "../../../ShowOnDom/StartFunc.js
 
 let StartFunc = () => {
     let jFLocalOrderNumber = getUrlQueryParams({ inGetKey: "OrderNumber" });
-    console.log("ORDER", jFLocalOrderNumber);
 
     StartFuncAddToDom({ inPk: jFLocalOrderNumber });
     StartFuncShowOnDom({ inPk: jFLocalOrderNumber });
