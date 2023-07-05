@@ -1,4 +1,6 @@
-import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../../../FromLocalStorage/OrdersData/FromPk.js";
+// import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../../../FromLocalStorage/OrdersData/FromPk.js";
+import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../../FromLocalStorage/OrdersData/FromPk.js";
+
 
 const StartFunc = ({ inPk }) => {
     let jVarLocalData = StartFuncFromLocalStorage({ inPk });
@@ -29,7 +31,7 @@ let jFLocalOrderAmount = ({ inData }) => {
 
     const sumOfAddOn = jVarLocalAddOn.reduce((partialSum, a) => partialSum + a, 0);
 
-    jFLocalOrderAmountId({ inOrderAmountId: sum + sumOfAddOn });
+    // jFLocalOrderAmountId({ inOrderAmountId: sum + sumOfAddOn });
 };
 
 let jFLocalCustomerName = ({ inOrderInfoCustomerNameId }) => {

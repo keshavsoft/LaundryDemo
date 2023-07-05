@@ -9,7 +9,7 @@ let StartFunc = () => {
     StartFuncFromUrlParams();
     StartFuncToLocalStorageFuncs();
 
-    StartFuncAddToDom();
+   // StartFuncAddToDom();
 
     jFShowDeliveryDateTime();
     jFLocalCurrentDateTimeToday();
