@@ -74,5 +74,17 @@
 			"};"
 		],
 		"description": "Log output to console"
+	},
+	"Mock Template Function For Return Html Control": {
+		"scope": "javascript,typescript",
+		"prefix": "KMockHtmlReturnHTMLControl",
+		"body": [
+			"let jFLocalReturnHTMLControlFor$1 = () => {",
+			"	let jVarLocalHtml$1 = '$1';",
+			"   let jVarHtml$1 = document.getElementById(jVarLocalHtml$1);",
+			"   return jVarHtml$1;",
+			"};"
+		],
+		"description": "Log output to console"
 	}
 }
