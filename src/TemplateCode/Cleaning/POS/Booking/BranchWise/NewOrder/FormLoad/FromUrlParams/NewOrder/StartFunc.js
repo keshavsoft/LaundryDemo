@@ -1,5 +1,5 @@
 let StartFunc = () => {
-    jFLocalBranchName();
+    // jFLocalBranchName();
     jFLocalShowCustomerMobile();
     jFLocalShowCustomerName();
 };

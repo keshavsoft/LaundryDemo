@@ -13,9 +13,9 @@ let StartFunc = ({ inEntry, inPk }) => {
 
         StartFuncBulk({ inData: jVarLocalParsed });
 
-        return inPk;
+        return parseInt(inPk);
+    };
 
-    }
     return false;
 };
 

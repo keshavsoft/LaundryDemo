@@ -6,7 +6,6 @@ let StartFunc = () => {
     StartFuncToStaticDom();
     StartFuncFormLoad();
     StartFuncAddListeners();
-
 };
 
 StartFunc();

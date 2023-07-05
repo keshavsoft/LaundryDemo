@@ -4,8 +4,8 @@ let StartFunc = ({ inBranchName, inOrderNumber }) => {
 
     myUrlWithParams.searchParams.append("BranchName", inBranchName);
     myUrlWithParams.searchParams.append("OrderNumber", inOrderNumber);
+   
     window.location.href = myUrlWithParams.href;
-
 };
 
 export { StartFunc }

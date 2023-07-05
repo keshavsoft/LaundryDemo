@@ -11,7 +11,7 @@ const StartFunc = () => {
         inEntry: jVarLocalToLocalStorage,
         inPk: jVarLocalOrderNumberFromDom
     });
-
+    console.log("jVarLocalOrderNumber : ", jVarLocalOrderNumber);
     if (jVarLocalOrderNumber > 0) {
         StartFuncLocalToUrl({
             inBranchName: jVarLocalToLocalStorage.CustomerData.BranchName,
