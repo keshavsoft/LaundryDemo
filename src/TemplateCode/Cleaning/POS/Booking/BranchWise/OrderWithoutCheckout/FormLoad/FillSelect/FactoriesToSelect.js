@@ -14,8 +14,7 @@ let jFCommonSelectFill = ({ inData, inHtmlId }) => {
 
     if (jVarLocalinHtmlId === null === false) {
         let jVarLocalWomanWashSelectId = jVarLocalinHtmlId.querySelector("select.FactorySelectClass");
-        console.log("jVarLocalWomanWashSelectId",jVarLocalWomanWashSelectId);
-
+        
         let jVarLocalMenItems = inData.map(element => {
             return {
                 location: element.location,

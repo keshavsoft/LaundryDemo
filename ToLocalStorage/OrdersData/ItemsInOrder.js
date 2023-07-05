@@ -3,28 +3,22 @@ import { StartFunc as StartFuncBulk } from "./Bulk.js";
 
 const toNumbers = arr => arr.map(Number);
 
-let StartFunc = ({ inEntry }) => {
+let StartFunc = ({ inEntry, inPk }) => {
+
     let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.OrdersData);
     let jVarLocalParsed = JSON.parse(jVarLocalFromLocalStorage);
 
-    let jVarLocalKeys = Object.keys(jVarLocalParsed);
-    let max = 0;
+    if (inPk in jVarLocalParsed) {
+        console.log("asdfhjkl", inPk, jVarLocalParsed);
 
-    if (jVarLocalKeys.length > 0) {
-        let jVarLocalNumbers = toNumbers(jVarLocalKeys);
+        jVarLocalParsed[inPk] = inEntry;
 
-        max = Math.max(...jVarLocalNumbers);
-    };
+        StartFuncBulk({ inData: jVarLocalParsed });
 
-    jVarLocalParsed[max + 1] = jFLocalPrepareData({ inEntry });
+        return inPk;
 
-    jFLocalPrepareData({ inEntry });
-
-    StartFuncBulk({ inData: jVarLocalParsed });
-
-    return max + 1;
-
-    
+    }
+    return false;
 };
 
 let jFLocalPrepareData = ({ inEntry }) => {
