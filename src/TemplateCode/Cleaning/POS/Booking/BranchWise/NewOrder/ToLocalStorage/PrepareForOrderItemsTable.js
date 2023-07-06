@@ -31,6 +31,7 @@ let LocalFuncAddItemData = () => {
             jVarLocalToShowData[key].locationPk = value.locationPk;
             jVarLocalToShowData[key].Pcs = value.Pcs;
             jVarLocalToShowData[key].Rate = value.Rate;
+            jVarLocalToShowData[key].DisPer = value.DisPer;
             jVarLocalToShowData[key].DeliveryDateTime = value.DeliveryDateTime;
         }
     );
