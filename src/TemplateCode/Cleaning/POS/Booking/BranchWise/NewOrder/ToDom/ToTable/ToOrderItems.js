@@ -44,6 +44,7 @@ let ShowOnDom = ({ inJsonData }) => {
                 inItemNamePk: element.ItemNamePk,
                 inWashType: element.WashType,
                 inPcs: element.Pcs,
+                inDisPer: element.DisPer,
                 inItemRate: element.Rate,
                 inAddOn: element.AddOn,
                 inTotal: element.Total,
@@ -64,7 +65,7 @@ let ShowOnDom = ({ inJsonData }) => {
 
 };
 
-let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, inItemName, inItemNamePk, inWashType, inWashTypePk, inPcs, inItemRate, inAddOn, inTotal, inlocation, inlocationPk, inDeliveryDateTime }) => {
+let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, inItemName, inItemNamePk, inWashType, inWashTypePk, inPcs, inItemRate, inDisPer, inAddOn, inTotal, inlocation, inlocationPk, inDeliveryDateTime }) => {
     var table = inTableBodyId;
     let jVarLocalTemplateForOrderItemsTableRow = document.getElementById("TemplateForOrderItemsTableRow");
 
@@ -79,6 +80,9 @@ let jFLocalItemsInsertRowFromTemplate = ({ inRowPk, inTableBodyId, inCategory, i
 
     let jVarLocalOrderItemsOrderItemsRateClass = clone.querySelector(".OrderItemsRateClass");
     jVarLocalOrderItemsOrderItemsRateClass.innerHTML = inItemRate;
+
+    let jVarLocalOrderItemsOrderDisPerClass = clone.querySelector(".OrderItemsDisPerClass");
+    jVarLocalOrderItemsOrderDisPerClass.innerHTML = inDisPer;
 
     let jVarLocalOrderItemsOrderItemsItemWashClass = clone.querySelector(".OrderItemsItemWashClass");
     jVarLocalOrderItemsOrderItemsItemWashClass.dataset.pk = inWashTypePk;

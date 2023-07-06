@@ -11,6 +11,7 @@ let jFLocalPrepareObject = ({ inTabPane }) => {
         let jVarLocalWashType = jVarClosestTabPane.querySelector(".WashTypeClass");
         let jVarLocalPcs = jVarClosestTabPane.querySelector(".PcsClass");
         let jVarLocalRate = jVarClosestTabPane.querySelector(".RateClass");
+        let jVarLocalDisPer = jVarClosestTabPane.querySelector(".DisPerClass");
 
         let jVarLocalCategory = jVarClosestTabPane.dataset.category;
         let jVarLocalItemSelect = jFLocalItemSelect({ inTabPane });
@@ -19,6 +20,7 @@ let jFLocalPrepareObject = ({ inTabPane }) => {
         let localWashSelect = selectItemByValue({ inHtmlSelect: jVarLocalWashType });
         let localPcs = jFLocalFromDomAsInt({ inHtmlId: jVarLocalPcs });
         let localRate = jFLocalFromDomAsInt({ inHtmlId: jVarLocalRate });
+        let localDisPer = jFLocalFromDomAsInt({ inHtmlId: jVarLocalDisPer });
         let jVarlocalItemSerial = jFLocalItemSerialClass({ inTabPane });
         let jVarlocalLocation = jFLocalFactoriesSelect({ inTabPane });
         let localLocationSelect = selectItemByValue({ inHtmlSelect: jVarlocalLocation.locationID });
@@ -35,6 +37,7 @@ let jFLocalPrepareObject = ({ inTabPane }) => {
             location: localLocationSelect,
             ...localPcs,
             ...localRate,
+            ...localDisPer,
             AddOn: "0-0",
             DeliveryDateTime: jVarLocalDeliveryDateTime.DeliveryDateTime,
             Total: Object.values(localPcs)[0] * Object.values(localRate)[0]
