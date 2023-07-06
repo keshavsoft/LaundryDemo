@@ -2,10 +2,10 @@ import { StartFunc as StartFuncFromAddOnsAll } from "../../FromLocalStorage/From
 
 let StartFunc = ({ inItemData }) => {
     let jVarLocalAddOnData = StartFuncFromAddOnsAll();
-
     Object.entries(inItemData).forEach(
         ([key, value]) => {
             value.Total = value.Rate * value.Pcs;
+            value.Total = value.Total * ((100 - value.DisPer) / 100);
 
             let jVarLocalFilered = jFLocalFilterData({
                 inData: jVarLocalAddOnData,
