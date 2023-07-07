@@ -16,6 +16,7 @@ let StartFunc = (event) => {
     });
 
     jVarHtmlRate.value = jVarLocalRate;
+    jFLocalItemsAddNewPcsId({inItemsAddNewPcsId: 1});
     jVarLocalAddButton.click();
 };
 
@@ -27,6 +28,12 @@ function selectItemByValue({ inHtmlSelect, inItemName }) {
             break;
         }
     }
+};
+
+let jFLocalItemsAddNewPcsId = ({ inItemsAddNewPcsId }) => {
+    let jVarLocalHtmlId = 'ItemsAddNewPcsId';
+   let jVarLocalItemsAddNewPcsId = document.getElementById(jVarLocalHtmlId);
+   jVarLocalItemsAddNewPcsId.value = inItemsAddNewPcsId;
 };
 
 export { StartFunc }

@@ -5,18 +5,18 @@ let StartFunc = ({ inItemData }) => {
         ([key, value]) => {
             value.Total = value.Rate * value.Pcs;
             value.Total = value.Total * ((100 - value.DisPer) / 100);
+            value.Total = Math.round(value.Total);
             value.Total += jFLocalConsiderAddOnData({ inItemSerial: value.ItemSerial });
         }
     );
 };
-
 
 let StartFunc1 = ({ inItemData }) => {
     let jVarLocalAddOnData = StartFuncFromAddOnsAll();
     Object.entries(inItemData).forEach(
         ([key, value]) => {
             value.Total = value.Rate * value.Pcs;
-            value.Total = value.Total * ((100 - value.DisPer) / 100);
+            value.Total = (value.Total * ((100 - value.DisPer) / 100));
 
             let jVarLocalFilered = jFLocalFilterData({
                 inData: jVarLocalAddOnData,
