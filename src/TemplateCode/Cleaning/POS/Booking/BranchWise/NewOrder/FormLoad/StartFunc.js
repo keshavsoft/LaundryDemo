@@ -14,7 +14,7 @@ let StartFunc = () => {
     jFShowDeliveryDateTime();
     jFLocalCurrentDateTimeToday();
 
-    StartFuncAddFrequent();
+   // StartFuncAddFrequent();
     StartFuncToItemAddTemplateRow();
 };
 
