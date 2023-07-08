@@ -5,18 +5,11 @@ import { StartFunc as StartFuncShowOnDom } from "../../../ShowOnDom/StartFunc.js
 
 let StartFunc = () => {
     let jFLocalOrderNumber = getUrlQueryParams({ inGetKey: "OrderNumber" });
+
     jFLocalFromOrdersDataToItemsInOrder();
+
     StartFuncAddToDom({ inPk: jFLocalOrderNumber });
     StartFuncShowOnDom({ inPk: jFLocalOrderNumber });
-
-    // let jVarLocalFromLocalStorage = StartFuncFromLocalStorage({ inPk: jFLocalOrderNumber });
-
-    // if (jVarLocalFromLocalStorage.KTF === false) {
-    //     return false;
-    // };
-
-    // StartFuncToLocalStorage({ inData: jVarLocalFromLocalStorage.JsonData.ItemsInOrder });
-
 };
 
 let jFLocalFromOrdersDataToItemsInOrder = () => {

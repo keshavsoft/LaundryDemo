@@ -10,10 +10,6 @@ let jFLocalMenTab = () => {
     if (jVarLocalMenItemsTabId === null === false) {
         let jVarLocalItemSelect = jVarLocalMenItemsTabId.querySelector(".ItemSelect");
 
-//         var element = document.getElementsByClassName('ItemSelect')[1];
-// var event = new Event('change');
-// element.dispatchEvent(event);
-
         if (jVarLocalItemSelect === null === false) jVarLocalItemSelect.addEventListener("change", (event) => {
             jFLocalItemSelectChange({
                 inEvent: event,

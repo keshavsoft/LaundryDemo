@@ -7,7 +7,9 @@ let StartFunc = ({ inPk }) => {
     StartFuncWashTypeFill();
     StartFuncItemsToSelect();
     StartFuncFactoriesToSelect();
+
     jFLocalOrderNumberId({ inOrderNumberId: inPk });
+
     StartFuncToDomToOrderItems();
 };
 
