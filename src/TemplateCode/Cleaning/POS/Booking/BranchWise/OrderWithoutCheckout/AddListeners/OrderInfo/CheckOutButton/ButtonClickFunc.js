@@ -5,16 +5,14 @@ import { StartFunc as StartFuncLocalToUrl } from "./LocalToUrl.js";
 
 const StartFunc = () => {
     let jVarLocalOrderNumberFromDom = jFLocalFromDomOrderNumberId();
-    let jVarLocalToLocalStorage = StartFuncPrepareData();
-
+    let jVarLocalPresentOrderData = StartFuncPrepareData();
     let jVarLocalOrderNumber = StartFuncToLocalStorage({
-        inEntry: jVarLocalToLocalStorage,
+        inEntry: jVarLocalPresentOrderData,
         inPk: jVarLocalOrderNumberFromDom
     });
-    console.log("jVarLocalOrderNumber : ", jVarLocalOrderNumber);
     if (jVarLocalOrderNumber > 0) {
         StartFuncLocalToUrl({
-            inBranchName: jVarLocalToLocalStorage.CustomerData.BranchName,
+            inBranchName: jVarLocalPresentOrderData.JsonData.OrderData.BranchName,
             inOrderNumber: jVarLocalOrderNumber
         });
     };
