@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncFromAddOnsAll } from "../../FromLocalStorage/FromAddOnsAll.js";
+import { StartFunc as StartFuncFromAddOnsAll } from "../../../FromLocalStorage/AddOnData/Bulk.js";
 
 let StartFunc = ({ inItemData }) => {
     Object.entries(inItemData).forEach(

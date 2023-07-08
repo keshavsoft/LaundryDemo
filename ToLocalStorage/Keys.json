@@ -6,5 +6,6 @@
     "CheckOutData": "CheckOutData",
     "ItemsInOrder": "ItemsInOrder",
     "AddOnData": "AddOnData",
-    "BranchName": "BranchName"
+    "BranchName": "BranchName",
+    "OrderItemsToShow": "OrderItemsToShow"
 }
