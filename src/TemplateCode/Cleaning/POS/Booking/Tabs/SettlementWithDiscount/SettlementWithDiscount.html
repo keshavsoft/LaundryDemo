@@ -150,136 +150,269 @@
 
     <main>
         <div class="container">
-            <include src="./src/components/Cleaning/POS/Booking/Tabs/OrderInfoForSettlement.html"></include>
-
-
-            <table class="table fs-1">
-                <thead>
-                    <tr>
-                        <th width="5%">#</th>
-                        <th width="40%">Settlement Type</th>
-                        <th width="30%" style="text-align:right">Amount</th>
-                        <th width="25%"></th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Discount</td>
-                        <td>
-                            <div class="form-group">
-                                <input class="form-control fs-1" type="Number" id="DiscountId"
-                                    placeholder="Discount" autofocus>
-                                <div class="invalid-feedback">
-                                Disc more than 10%
+            <div class="card text-center mt-2">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row mb-3">
+                                <label for="OrderInfoCustomerNameId"
+                                    class="col-sm-4 col-form-label col-form-label-lg">Customer</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control form-control-lg"
+                                        id="OrderInfoCustomerNameId" disabled>
                                 </div>
                             </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary fs-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                                    class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path
-                                        d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z">
-                                    </path>
-                                </svg>
-                                Discount
-                            </button>
-                        </td>
-                    </tr>
+                        </div>
 
-                    <tr>
-                        <td>2</td>
-                        <td>Cash</td>
-                        <td>
-                            <div class="form-group">
-                                <input class="form-control fs-1" type="Number" id="CashAmountId"
-                                    placeholder="Cash Amount">
-                                <div class="invalid-feedback">
-                                    Should not be empty!
+                        <div class="col-4">
+                            <div class="row mb-3">
+                                <label for="OrderInfoCustomerMobileId"
+                                    class="col-sm-4 col-form-label col-form-label-lg">Mobile</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control form-control-lg"
+                                        id="OrderInfoCustomerMobileId">
                                 </div>
                             </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary fs-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                                    class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                    <path
-                                        d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z">
-                                    </path>
-                                </svg>
-                                Cash
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Card</td>
-                        <td>
-                            <div class="form-group">
-                                <input class="form-control fs-1" type="Number" id="CardAmountId"
-                                    placeholder="Card Amount">
-                                <div class="invalid-feedback">
-                                    Should not be empty!
+                        </div>
+
+                        <div class="col-2">
+                            <div class="row mb-3">
+                                <label for="BranchNameId"
+                                    class="col-sm-5 col-form-label col-form-label-sm">Branch</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control form-control-sm" id="BranchNameId">
                                 </div>
                             </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-success fs-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                                    class="bi bi-credit-card" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
-                                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
-                                </svg>
-                                Card
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>UPI</td>
-                        <td>
-                            <div class="form-group">
-                                <input class="form-control fs-1" type="Number" id="UPIAmountId"
-                                    placeholder="UPI Amount">
-                                <div class="invalid-feedback">
-                                    Should not be empty!
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-danger fs-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                                    class="bi bi-qr-code" viewBox="0 0 16 16">
-                                    <path d="M2 2h2v2H2V2Z" />
-                                    <path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z" />
-                                    <path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z" />
-                                    <path
-                                        d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z" />
-                                    <path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z" />
-                                </svg>
-                                UPI
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td></td>
-                        <td> <button type="button" class="btn btn-success fs-1" id="SaveButtonId">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                                    class="bi bi-credit-card" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
-                                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
-                                </svg>
-                                Save
-                            </button></td>
-                    </tr>
-                </tfoot>
-            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row fs-3">
+                        <div class="col">
+                            <button type="button" class="btn btn-danger fs-4" id="OrderNumberId">OrderNumber</button>
+                        </div>
+                        <div class="col"> <input class="form-control fs-4" tabindex="-1" type="date"></div>
+                        <div class="col fs-1" id="OrderAmountId">OrderAmount</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <table class="table fs-4">
+                        <thead>
+                            <tr>
+                                <th width="10%">#</th>
+                                <th width="30%">Description</th>
+                                <th width="25%">%</th>
+                                <th width="35%" style="text-align:right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>1</td>
+                                <td>Discount</td>
+                                <td>
+                                    <div class="form-group">
+                                        <input class="form-control" type="Number" id="DiscountPerId"
+                                            placeholder="Discount" min="0" max="10">
+                                        <div class="invalid-feedback">
+                                            Disc more than 10%
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input class="form-control" type="Number" id="DiscountAmountId"
+                                            placeholder="Discount">
+                                        <div class="invalid-feedback">
+                                            Disc more than 10%
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>CGST</td>
+                                <td></td>
+                                <td>
+                                    <div class="form-group">
+                                        <input class="form-control" type="Number" id="CashAmountId"
+                                            placeholder="Cash Amount">
+                                        <div class="invalid-feedback">
+                                            Should not be empty!
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>SGST</td>
+                                <td></td>
+                                <td>
+                                    <div class="form-group">
+                                        <input class="form-control" type="Number" id="CardAmountId"
+                                            placeholder="Card Amount">
+                                        <div class="invalid-feedback">
+                                            Should not be empty!
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td> <button type="button" class="btn btn-success fs-1" id="SaveButtonId">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                            fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
+                                            <path
+                                                d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
+                                        </svg>
+                                        Save
+                                    </button></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="col">
+                    <table class="table fs-4">
+                        <thead>
+                            <tr>
+                                <th width="5%">#</th>
+                                <th width="40%">Settlement Type</th>
+                                <th width="30%" style="text-align:right">Amount</th>
+                                <th width="25%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>1</td>
+                                <td>Discount</td>
+                                <td>
+                                    <div class="form-group">
+                                        <input class="form-control fs-1" type="Number" id="DiscountId"
+                                            placeholder="Discount" autofocus>
+                                        <div class="invalid-feedback">
+                                            Disc more than 10%
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary fs-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                            fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                            <path
+                                                d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z">
+                                            </path>
+                                        </svg>
+                                        Discount
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>Cash</td>
+                                <td>
+                                    <div class="form-group">
+                                        <input class="form-control fs-1" type="Number" id="CashAmountId"
+                                            placeholder="Cash Amount">
+                                        <div class="invalid-feedback">
+                                            Should not be empty!
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary fs-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                            fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+                                            <path
+                                                d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z">
+                                            </path>
+                                        </svg>
+                                        Cash
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Card</td>
+                                <td>
+                                    <div class="form-group">
+                                        <input class="form-control fs-1" type="Number" id="CardAmountId"
+                                            placeholder="Card Amount">
+                                        <div class="invalid-feedback">
+                                            Should not be empty!
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-success fs-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                            fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
+                                            <path
+                                                d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
+                                        </svg>
+                                        Card
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>UPI</td>
+                                <td>
+                                    <div class="form-group">
+                                        <input class="form-control fs-1" type="Number" id="UPIAmountId"
+                                            placeholder="UPI Amount">
+                                        <div class="invalid-feedback">
+                                            Should not be empty!
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger fs-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                            fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">
+                                            <path d="M2 2h2v2H2V2Z" />
+                                            <path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z" />
+                                            <path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z" />
+                                            <path
+                                                d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z" />
+                                            <path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z" />
+                                        </svg>
+                                        UPI
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td> <button type="button" class="btn btn-success fs-1" id="SaveButtonId">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                            fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
+                                            <path
+                                                d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
+                                        </svg>
+                                        Save
+                                    </button></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+
         </div>
     </main>
 
@@ -321,13 +454,17 @@
 </script>
 
     <script>
-
-
-        let jVarLocalHbsTemplateForTable = document.getElementById("HbsTemplateForTable");
-
-        Handlebars.registerHelper('ForSNo', function (item) {
-            return item + 1;
-        });
+        function debounce(func, timeout = 300) {
+            let timer;
+            return (...args) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => { func.apply(this, args); }, timeout);
+            };
+        }
+        function saveInput() {
+            console.log('Saving data');
+        }
+        const processChange = debounce(() => saveInput());
 
     </script>
 

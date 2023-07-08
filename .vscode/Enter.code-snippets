@@ -6,6 +6,14 @@
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
 	// Placeholders with the same ids are connected.
 	// Example:
+	"Mock document.getElementById": {
+		"scope": "javascript,typescript",
+		"prefix": "KMockDocumentGetElementById",
+		"body": [
+			" let jVarLocal$1 = document.getElementById('$1');"
+		],
+		"description": "Log output to console"
+	},
 	"Empty Start Function": {
 		"scope": "javascript,typescript",
 		"prefix": "KStartFunc",
@@ -82,6 +90,19 @@
 			"	let jVarLocalHtml$1 = '$1';",
 			"   let jVarHtml$1 = document.getElementById(jVarLocalHtml$1);",
 			"   let jVarHtml$1Value = jVarHtml$1.value.trim();",
+			"   return jVarHtml$1Value;",
+			"};"
+		],
+		"description": "Log output to console"
+	},
+	"Mock Function to pull from Dom innerHTML": {
+		"scope": "javascript,typescript",
+		"prefix": "KMockHtmlAssignFromDom",
+		"body": [
+			"let jFLocalFromDom$1 = () => {",
+			"	let jVarLocalHtml$1 = '$1';",
+			"   let jVarHtml$1 = document.getElementById(jVarLocalHtml$1);",
+			"   let jVarHtml$1Value = jVarHtml$1.innerHTML.trim();",
 			"   return jVarHtml$1Value;",
 			"};"
 		],

@@ -1,3 +1,5 @@
+import { StartFunc as StartFunconkeyupAssign } from "./Addlisteners/DiscountPerId/onkeyupAssign.js";
+
 let StartFunc = ({ inProjectName }) => {
     let jVarLocalShowButtonClass = document.getElementsByClassName("ShowButtonClass");
 
@@ -9,6 +11,8 @@ let StartFunc = ({ inProjectName }) => {
             });
         });
     };
+
+    StartFunconkeyupAssign();
 };
 
 // DeleteButtonClass
