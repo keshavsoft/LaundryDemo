@@ -5,7 +5,7 @@ import { StartFunc as StartFuncMainScreen } from "./MainScreen/MenuIdCollapse.js
 import { StartFunc as StartFuncCheckOutButton } from "./OrderInfo/CheckOutButton/ClickFunc.js";
 
 let StartFunc = () => {
-    StartFuncCheckOutButton();
+    //StartFuncCheckOutButton();
     
     // StartFuncItemButtonClick();
 
