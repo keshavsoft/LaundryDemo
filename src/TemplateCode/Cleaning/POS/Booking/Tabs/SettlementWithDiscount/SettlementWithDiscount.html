@@ -187,12 +187,19 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="row fs-3">
+                    <div class="row">
                         <div class="col">
                             <button type="button" class="btn btn-danger fs-4" id="OrderNumberId">OrderNumber</button>
                         </div>
                         <div class="col"> <input class="form-control fs-4" tabindex="-1" type="date"></div>
                         <div class="col fs-1" id="OrderAmountId">OrderAmount</div>
+                        <div class="col">
+                            <div class="form-floating">
+                                <input id="NettAmountId" type="number" class="form-control fs-4" value="0" min="1"
+                                    max="10" name="DisPer">
+                                <label for="PcsId">Amount to Pay</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -239,7 +246,7 @@
                                 <td></td>
                                 <td>
                                     <div class="form-group">
-                                        <input class="form-control" type="Number" id="CashAmountId"
+                                        <input class="form-control" type="Number" id="CgstAmountId"
                                             placeholder="Cash Amount">
                                         <div class="invalid-feedback">
                                             Should not be empty!
@@ -253,7 +260,7 @@
                                 <td></td>
                                 <td>
                                     <div class="form-group">
-                                        <input class="form-control" type="Number" id="CardAmountId"
+                                        <input class="form-control" type="Number" id="SgstAmountId"
                                             placeholder="Card Amount">
                                         <div class="invalid-feedback">
                                             Should not be empty!
@@ -293,26 +300,15 @@
 
                             <tr>
                                 <td>1</td>
-                                <td>Discount</td>
+                                <td>Round Off</td>
                                 <td>
                                     <div class="form-group">
-                                        <input class="form-control fs-1" type="Number" id="DiscountId"
-                                            placeholder="Discount" autofocus>
+                                        <input class="form-control fs-1" type="Number" id="RoundOffId"
+                                            placeholder="Round Off">
                                         <div class="invalid-feedback">
                                             Disc more than 10%
                                         </div>
                                     </div>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-primary fs-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
-                                            fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
-                                            <path
-                                                d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z">
-                                            </path>
-                                        </svg>
-                                        Discount
-                                    </button>
                                 </td>
                             </tr>
 
@@ -452,21 +448,6 @@
                 </tr>
                 {{/each}}
 </script>
-
-    <script>
-        function debounce(func, timeout = 300) {
-            let timer;
-            return (...args) => {
-                clearTimeout(timer);
-                timer = setTimeout(() => { func.apply(this, args); }, timeout);
-            };
-        }
-        function saveInput() {
-            console.log('Saving data');
-        }
-        const processChange = debounce(() => saveInput());
-
-    </script>
 
     <script src="./Js/Settlement.js" type="module"></script>
 </body>
