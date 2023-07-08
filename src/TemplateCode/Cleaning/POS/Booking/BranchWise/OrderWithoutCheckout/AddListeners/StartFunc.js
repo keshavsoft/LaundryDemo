@@ -6,7 +6,9 @@ import { StartFunc as StartFuncCheckOutButton } from "./OrderInfo/CheckOutButton
 
 let StartFunc = () => {
     StartFuncCheckOutButton();
-    StartFuncItemButtonClick();
+    
+    // StartFuncItemButtonClick();
+
     StartFuncAddOn();
     StartFuncOnChange();
     StartFuncMainScreen();
