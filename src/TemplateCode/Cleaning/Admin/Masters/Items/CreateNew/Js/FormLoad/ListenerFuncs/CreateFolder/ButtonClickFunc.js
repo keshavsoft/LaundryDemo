@@ -1,9 +1,10 @@
 import { StartFunc as StartFuncAfterFetch } from "./AfterFetch.js";
 import { StartFunc as StartFuncFetchFunc } from "./FetchFunc.js";
 import { StartFunc as StartFuncPreparePostData } from "./PreparePostData.js";
+import { StartFunc as StartFuncCheckBeforeFetch } from "./CheckBeforeFetch.js";
 
 let StartFunc = async ({ inProjectName }) => {
-    if (jFLocalCheckBeforeFetch()) {
+    if (StartFuncCheckBeforeFetch()) {
         let jVarLocalBodyData = StartFuncPreparePostData();
 
         let response = await StartFuncFetchFunc({
