@@ -6,7 +6,7 @@ const StartFunc = ({ inPk }) => {
     jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.JsonData.CustomerData.CustomerName });
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.JsonData.CustomerData.CustomerMobile });
     jFLocalOrderAmount({ inData: jVarLocalData.JsonData });
-    jFLocalBranchNameId({ inOrderInfoCustomerBranchId: jVarLocalData.JsonData.CustomerData.BranchName });
+    jFLocalBranchNameId({ inOrderInfoCustomerBranchId: jVarLocalData.JsonData.OrderData.BranchName });
     jFLocalOrderNumberId({ inOrderNumberId: inPk });
 };
 

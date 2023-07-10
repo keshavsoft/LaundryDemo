@@ -2,7 +2,6 @@ import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../
 
 const StartFunc = () => {
     let jVarLocalBranchName = StartFuncFromLocalStorage();
-    console.log("jVarLocalBranchName : ", jVarLocalBranchName);
     jFLocalBranchNameId({ inBranchNameId: jVarLocalBranchName });
 };
 
