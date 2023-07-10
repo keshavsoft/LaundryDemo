@@ -7,6 +7,13 @@ const StartFunc = ({ inPk }) => {
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.JsonData.CustomerData.CustomerMobile });
     jFLocalOrderAmount({ inData: jVarLocalData.JsonData });
     jFLocalBranchNameId({ inOrderInfoCustomerBranchId: jVarLocalData.JsonData.CustomerData.BranchName });
+    jFLocalOrderNumberId({ inOrderNumberId: inPk });
+};
+
+let jFLocalOrderNumberId = ({ inOrderNumberId }) => {
+    let jVarLocalHtmlId = 'OrderNumberId';
+    let jVarLocalOrderNumberId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalOrderNumberId.innerHTML = inOrderNumberId;
 };
 
 let jFLocalOrderAmount = ({ inData }) => {
