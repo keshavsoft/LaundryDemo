@@ -1,6 +1,7 @@
 import CommonKeys from "../Keys.json" assert { type: "json" };
 
 let StartFunc = ({ inOrderKey, inSettlementData }) => {
+    console.log("inOrderKey",inOrderKey);
     let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.OrdersData);
     let jVarLocalParsed = JSON.parse(jVarLocalFromLocalStorage);
 
