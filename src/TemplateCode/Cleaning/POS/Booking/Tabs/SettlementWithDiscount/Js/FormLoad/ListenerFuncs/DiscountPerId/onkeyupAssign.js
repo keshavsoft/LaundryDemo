@@ -73,7 +73,7 @@ let jFLocalFromDomDiscountAmountId = () => {
 let jFLocalNettAmountId = ({ inNettAmountId }) => {
     let jVarLocalHtmlId = 'NettAmountId';
     let jVarLocalNettAmountId = document.getElementById(jVarLocalHtmlId);
-    jVarLocalNettAmountId.value = inNettAmountId;
+    jVarLocalNettAmountId.value = inNettAmountId.toFixed(2);
 };
 
 let jFLocalSgstAmountId = ({ inSgstAmountId }) => {
