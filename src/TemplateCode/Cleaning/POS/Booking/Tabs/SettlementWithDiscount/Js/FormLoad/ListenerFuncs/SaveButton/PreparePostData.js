@@ -8,7 +8,7 @@ let StartFunc = () => {
 };
 
 let jFLocalFromDomDiscountId = () => {
-    let jVarLocalHtmlDiscountId = 'DiscountId';
+    let jVarLocalHtmlDiscountId = 'DiscountPerId';
    let jVarHtmlDiscountId = document.getElementById(jVarLocalHtmlDiscountId);
    let jVarHtmlDiscountIdValue = jVarHtmlDiscountId.value.trim();
    return jVarHtmlDiscountIdValue;
