@@ -1,7 +1,6 @@
 let jVarLocalShowButtonClass = document.getElementById("DiscountPerId");
 
 let StartFunc = () => {
-    console.log("jVarLocalShowButtonClass : ", jVarLocalShowButtonClass);
     jVarLocalShowButtonClass.addEventListener("keyup", processChange);
 };
 
@@ -18,15 +17,16 @@ function saveInput() {
     let jVarLocalOrderAmount = jFLocalFromDomOrderAmountId();
     let jVarLocalDiscountAmountId = document.getElementById("DiscountAmountId");
 
-    jVarLocalDiscountAmountId.value = (jVarLocalOrderAmount * ((100 - jVarLocalShowButtonClass.value) / 100)).toFixed(2);
-
-    jFLocalCgstAmountId({ inCgstAmountId: ((jVarLocalOrderAmount - jVarLocalDiscountAmountId.value) * 5 / 100).toFixed(2) });
-    jFLocalSgstAmountId({ inSgstAmountId: ((jVarLocalOrderAmount - jVarLocalDiscountAmountId.value) * 5 / 100).toFixed(2) });
+    jVarLocalDiscountAmountId.value = ((jVarLocalOrderAmount * jVarLocalShowButtonClass.value) / 100).toFixed(2);
+    jFLocalCgstAmountId({ inCgstAmountId: ((jVarLocalOrderAmount - jVarLocalDiscountAmountId.value) * (9/100)).toFixed(2) });
+    jFLocalSgstAmountId({ inSgstAmountId: ((jVarLocalOrderAmount - jVarLocalDiscountAmountId.value) * (9/100)).toFixed(2) });
     jFShowNettAmount();
 };
 
 let jFShowNettAmount = () => {
-    let jVarLocalAfterDiscount = jFLocalFromDomDiscountAmountId();
+    let jVarLocalOrderAmount = jFLocalFromDomOrderAmountId();
+    let jVarLocalDiscountAmountId = document.getElementById("DiscountAmountId");
+    let jVarLocalAfterDiscount = jVarLocalOrderAmount-jVarLocalDiscountAmountId.value;
     let jVarLocalSgstAmountId = jFLocalFromDomSgstAmountId();
     let jVarLocalCgstAmountId = jFLocalFromDomCgstAmountId();
 

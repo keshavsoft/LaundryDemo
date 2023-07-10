@@ -1,7 +1,13 @@
 let StartFunc = () => {
-    let jVarNettAmount = jFLocalFromDomNettAmountId();
-    let jVarRoundOff = jFLocalFromDomRoundOffId();
-    jFLocalToInnerHtmlUPIAmountId({ injVarUPIAmount: parseFloat(jVarNettAmount) + parseFloat(jVarRoundOff)});
+    let jVarLocalNettAmount = jFLocalFromDomNettAmountId();
+    let jVarLocalRoundOff = jFLocalFromDomRoundOffId();
+
+    let jVarLocalCashAmount = jFLocalFromDomCashAmountId()||0;
+    let jVarLocalCardAmount = jFLocalFromDomCardAmountId()||0;
+    let jVarLocalSettlementAmount = parseInt(jVarLocalCashAmount) + parseInt(jVarLocalCardAmount);
+    let jVarLocalUPIAmount = parseFloat(jVarLocalNettAmount) + parseFloat(jVarLocalRoundOff) - jVarLocalSettlementAmount;
+
+    jFLocalToInnerHtmlUPIAmountId({ injVarUPIAmount: jVarLocalUPIAmount });
 };
 
 let jFLocalFromDomNettAmountId = () => {
@@ -22,6 +28,20 @@ let jFLocalToInnerHtmlUPIAmountId = ({ injVarUPIAmount }) => {
     let jVarLocalHtmlId = 'UPIAmountId';
    let jVarLocalUPIAmountId = document.getElementById(jVarLocalHtmlId);
    jVarLocalUPIAmountId.value = injVarUPIAmount;
+};
+
+let jFLocalFromDomCashAmountId = () => {
+    let jVarLocalHtmlCashAmountId = 'CashAmountId';
+   let jVarHtmlCashAmountId = document.getElementById(jVarLocalHtmlCashAmountId);
+   let jVarHtmlCashAmountIdValue = jVarHtmlCashAmountId.value;
+   return jVarHtmlCashAmountIdValue;
+};
+
+let jFLocalFromDomCardAmountId = () => {
+    let jVarLocalHtmlCardAmountId = 'CardAmountId';
+   let jVarHtmlCardAmountId = document.getElementById(jVarLocalHtmlCardAmountId);
+   let jVarHtmlCardAmountIdValue = jVarHtmlCardAmountId.value;
+   return jVarHtmlCardAmountIdValue;
 };
 
 
