@@ -14,6 +14,7 @@ const StartFunc = () => {
         inEntry: jVarLocalToLocalStorage,
         inPk: jVarLocalOrderNumberFromDom
     });
+    
     if (jVarLocalOrderNumber > 0) {
         let jVarLocalIsDiscountGiven = jFlocalIsDiscountGiven();
 

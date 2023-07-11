@@ -8,7 +8,7 @@ let StartFunc = () => {
     let jVarLocalNettAmount = parseFloat(jFLocalFromDomNettAmountId()) || 0;
     let jVarLocalCheckAmount = jVarLocalCashAmount + jVarLocalCardAmount + jVarLocalUPIAmount;
     jFLocalReturnHTMLControlForDiscountId().classList.remove("is-invalid");
-    if ((jVarLocalDiscountAmount / jVarLocalOrderAmount) * 100 > 10) {
+    if (jVarLocalDiscountAmount > 10) {
         console.log("Decrease the discount");
         jFLocalReturnHTMLControlForDiscountId().focus();
         jFLocalReturnHTMLControlForDiscountId().classList.add("is-invalid");
