@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncButtonClickFunc } from "./ButtonClickFunc.js";
+import { StartFunc as StartFuncButtonClickFunc } from "./2-ButtonClickFunc.js";
 
 const StartFunc = () => {
     let jVarLocalCreateFolderButtonId = document.getElementById("SaveButtonId");

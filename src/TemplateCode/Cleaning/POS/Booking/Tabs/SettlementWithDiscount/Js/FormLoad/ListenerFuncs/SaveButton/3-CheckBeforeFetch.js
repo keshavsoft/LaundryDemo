@@ -8,17 +8,24 @@ let StartFunc = () => {
     let jVarLocalNettAmount = parseFloat(jFLocalFromDomNettAmountId()) || 0;
     let jVarLocalCheckAmount = jVarLocalCashAmount + jVarLocalCardAmount + jVarLocalUPIAmount;
     jFLocalReturnHTMLControlForDiscountId().classList.remove("is-invalid");
+
     if (jVarLocalDiscountAmount > 10) {
-        console.log("Decrease the discount");
         jFLocalReturnHTMLControlForDiscountId().focus();
         jFLocalReturnHTMLControlForDiscountId().classList.add("is-invalid");
         return false;
-    }
-    if (jVarLocalCheckAmount === jVarLocalNettAmount + jVarLocalRoundOffAmount) {
-        console.log("Saved");
-        return true;
-    }
-    return false;
+    };
+
+    if (jVarLocalCheckAmount === jVarLocalNettAmount + jVarLocalRoundOffAmount === false) {
+        jFLocalReturnHTMLControlForCashAmountId().focus();
+        return false;
+    };
+    return true;
+};
+
+let jFLocalReturnHTMLControlForCashAmountId = () => {
+    let jVarLocalHtmlCashAmountId = 'CashAmountId';
+    let jVarHtmlCashAmountId = document.getElementById(jVarLocalHtmlCashAmountId);
+    return jVarHtmlCashAmountId;
 };
 
 let jFLocalCashAmountId = () => {
