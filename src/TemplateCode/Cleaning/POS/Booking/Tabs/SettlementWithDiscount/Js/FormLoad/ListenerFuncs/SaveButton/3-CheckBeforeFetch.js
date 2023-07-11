@@ -7,6 +7,7 @@ let StartFunc = () => {
     let jVarLocalDiscountAmount = parseFloat(jFLocalFromDomDiscountId()) || 0;
     let jVarLocalNettAmount = parseFloat(jFLocalFromDomNettAmountId()) || 0;
     let jVarLocalCheckAmount = jVarLocalCashAmount + jVarLocalCardAmount + jVarLocalUPIAmount;
+
     jFLocalReturnHTMLControlForDiscountId().classList.remove("is-invalid");
 
     if (jVarLocalDiscountAmount > 10) {
@@ -17,6 +18,8 @@ let StartFunc = () => {
 
     if (jVarLocalCheckAmount === jVarLocalNettAmount + jVarLocalRoundOffAmount === false) {
         jFLocalReturnHTMLControlForCashAmountId().focus();
+        jFLocalReturnHTMLControlForCashAmountId().classList.add("is-invalid");
+
         return false;
     };
     return true;

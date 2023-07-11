@@ -11,7 +11,6 @@ const StartFunc = () => {
 let jFLocalDiscountKeyUp = () => {
     let event = new Event("keyup");
     document.getElementById("DiscountPerId").dispatchEvent(event);
-
 };
 
 export { StartFunc };
