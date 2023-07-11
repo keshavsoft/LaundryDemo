@@ -3,17 +3,18 @@ let StartFunc = () => {
     let jVarLocalCardAmount = parseInt(jFLocalCardAmountId()) || 0;
     let jVarLocalUPIAmount = parseInt(jFLocalUPIAmountId()) || 0;
     let jVarLocalOrderAmount = parseInt(jFLocalOrderAmountId()) || 0;
-    let jVarLocalDiscountAmount = parseInt(jFLocalFromDomDiscountId()) || 0;
-    let jVarLocalCheckAmount = jVarLocalCashAmount + jVarLocalCardAmount + jVarLocalUPIAmount+jVarLocalDiscountAmount;
+    let jVarLocalRoundOffAmount = parseFloat(jFLocalFromDomRoundOffId()) || 0;
+    let jVarLocalDiscountAmount = parseFloat(jFLocalFromDomDiscountId()) || 0;
+    let jVarLocalNettAmount = parseFloat(jFLocalFromDomNettAmountId()) || 0;
+    let jVarLocalCheckAmount = jVarLocalCashAmount + jVarLocalCardAmount + jVarLocalUPIAmount;
     jFLocalReturnHTMLControlForDiscountId().classList.remove("is-invalid");
-    if((jVarLocalDiscountAmount/jVarLocalOrderAmount)*100>10){
+    if ((jVarLocalDiscountAmount / jVarLocalOrderAmount) * 100 > 10) {
         console.log("Decrease the discount");
         jFLocalReturnHTMLControlForDiscountId().focus();
         jFLocalReturnHTMLControlForDiscountId().classList.add("is-invalid");
         return false;
     }
-   
-    if (jVarLocalCheckAmount === jVarLocalOrderAmount) {
+    if (jVarLocalCheckAmount === jVarLocalNettAmount + jVarLocalRoundOffAmount) {
         console.log("Saved");
         return true;
     }
@@ -27,10 +28,24 @@ let jFLocalCashAmountId = () => {
     return jVarHtmlCashAmountIdValue;
 };
 
+let jFLocalFromDomRoundOffId = () => {
+    let jVarLocalHtmlRoundOffId = 'RoundOffId';
+    let jVarHtmlRoundOffId = document.getElementById(jVarLocalHtmlRoundOffId);
+    let jVarHtmlRoundOffIdValue = jVarHtmlRoundOffId.value.trim();
+    return jVarHtmlRoundOffIdValue;
+};
+
+let jFLocalFromDomNettAmountId = () => {
+    let jVarLocalHtmlNettAmountId = 'NettAmountId';
+    let jVarHtmlNettAmountId = document.getElementById(jVarLocalHtmlNettAmountId);
+    let jVarHtmlNettAmountIdValue = jVarHtmlNettAmountId.value.trim();
+    return jVarHtmlNettAmountIdValue;
+};
+
 let jFLocalReturnHTMLControlForDiscountId = () => {
     let jVarLocalHtmlDiscountId = 'DiscountPerId';
-   let jVarHtmlDiscountId = document.getElementById(jVarLocalHtmlDiscountId);
-   return jVarHtmlDiscountId;
+    let jVarHtmlDiscountId = document.getElementById(jVarLocalHtmlDiscountId);
+    return jVarHtmlDiscountId;
 };
 
 let jFLocalCardAmountId = () => {
@@ -56,9 +71,9 @@ let jFLocalOrderAmountId = () => {
 
 let jFLocalFromDomDiscountId = () => {
     let jVarLocalHtmlDiscountId = 'DiscountPerId';
-   let jVarHtmlDiscountId = document.getElementById(jVarLocalHtmlDiscountId);
-   let jVarHtmlDiscountIdValue = jVarHtmlDiscountId.value.trim();
-   return jVarHtmlDiscountIdValue;
+    let jVarHtmlDiscountId = document.getElementById(jVarLocalHtmlDiscountId);
+    let jVarHtmlDiscountIdValue = jVarHtmlDiscountId.value.trim();
+    return jVarHtmlDiscountIdValue;
 };
 
 export { StartFunc };
