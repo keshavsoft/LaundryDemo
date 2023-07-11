@@ -1,5 +1,5 @@
-let LocalFolderPath = "src/Projects";
-let LocalDestinationPath = "public/Projects";
+let LocalFolderPath = "src/TemplateCode";
+let LocalDestinationPath = "public/Html";
 
 let CommonWalk = require("./WalkFuncs");
 
