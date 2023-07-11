@@ -16,7 +16,7 @@ let StartFunc = ({ inOrderKey, inSettlementData }) => {
     jVarLocalParsed[inOrderKey].CheckOutData = inSettlementData;
 
     // localStorage.setItem(CommonKeys.OrdersData, JSON.stringify(jVarLocalJsonData));
-    StartFuncBulk({ inData: jVarLocalJsonData });
+    return StartFuncBulk({ inData: jVarLocalJsonData });
 };
 
 export { StartFunc };
