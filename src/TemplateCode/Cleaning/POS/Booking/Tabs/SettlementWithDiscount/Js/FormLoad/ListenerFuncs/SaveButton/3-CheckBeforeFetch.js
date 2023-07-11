@@ -17,11 +17,60 @@ let StartFunc = () => {
     };
 
     if (jVarLocalCheckAmount === jVarLocalNettAmount + jVarLocalRoundOffAmount === false) {
-        jFLocalReturnHTMLControlForCashAmountId().focus();
-        jFLocalReturnHTMLControlForCashAmountId().classList.add("is-invalid");
+        if (jVarLocalCashAmount > 0) {
+            if (jVarLocalCardAmount > 0) {
+                jFLocalReturnHTMLControlForUPIAmountId().focus();
+                jFLocalReturnHTMLControlForUPIAmountId().classList.add("is-invalid");
+                jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
+                jFLocalReturnHTMLControlForCashAmountId().classList.remove("is-invalid");
+            }
+            else {
+                jFLocalReturnHTMLControlForCardAmountId().focus();
+                jFLocalReturnHTMLControlForCardAmountId().classList.add("is-invalid")
+                jFLocalReturnHTMLControlForCashAmountId().classList.remove("is-invalid");
+                jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
+            };
+        }
+        else if (jVarLocalCardAmount > 0) {
+            if (jVarLocalCashAmount > 0) {
+                jFLocalReturnHTMLControlForUPIAmountId().focus();
+                jFLocalReturnHTMLControlForUPIAmountId().classList.add("is-invalid");
+                jFLocalReturnHTMLControlForCashAmountId().classList.remove("is-invalid");
+                jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
+            }
+            else {
+                jFLocalReturnHTMLControlForCashAmountId().focus();
+                jFLocalReturnHTMLControlForCashAmountId().classList.add("is-invalid");
+                jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
+                jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
+            };
+        }
+        else if (jVarLocalUPIAmount > 0) {
+            if (jVarLocalCashAmount > 0) {
+                jFLocalReturnHTMLControlForCardAmountId().focus();
+                jFLocalReturnHTMLControlForCardAmountId().classList.add("is-invalid")
+                jFLocalReturnHTMLControlForCashAmountId().classList.remove("is-invalid");
+                jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
+            }
+            else {
+                jFLocalReturnHTMLControlForCashAmountId().focus();
+                jFLocalReturnHTMLControlForCashAmountId().classList.add("is-invalid");
+                jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
+                jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
+            };
+        }
+        else {
+            jFLocalReturnHTMLControlForCashAmountId().focus();
+            jFLocalReturnHTMLControlForCashAmountId().classList.add("is-invalid");
+            jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
+            jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
+        };
 
         return false;
     };
+    jFLocalReturnHTMLControlForCashAmountId().classList.remove("is-invalid");
+    jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
+    jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
     return true;
 };
 
@@ -29,6 +78,18 @@ let jFLocalReturnHTMLControlForCashAmountId = () => {
     let jVarLocalHtmlCashAmountId = 'CashAmountId';
     let jVarHtmlCashAmountId = document.getElementById(jVarLocalHtmlCashAmountId);
     return jVarHtmlCashAmountId;
+};
+
+let jFLocalReturnHTMLControlForCardAmountId = () => {
+    let jVarLocalHtmlCardAmountId = 'CardAmountId';
+    let jVarHtmlCardAmountId = document.getElementById(jVarLocalHtmlCardAmountId);
+    return jVarHtmlCardAmountId;
+};
+
+let jFLocalReturnHTMLControlForUPIAmountId = () => {
+    let jVarLocalHtmlUPIAmountId = 'UPIAmountId';
+    let jVarHtmlUPIAmountId = document.getElementById(jVarLocalHtmlUPIAmountId);
+    return jVarHtmlUPIAmountId;
 };
 
 let jFLocalCashAmountId = () => {
