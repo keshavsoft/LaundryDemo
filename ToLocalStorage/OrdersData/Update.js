@@ -1,17 +1,22 @@
 import CommonKeys from "../Keys.json" assert { type: "json" };
+import CommonConfigJson from "../../Config.json" assert { type: "json" };
+import { StartFunc as StartFuncBulk } from "./Bulk.js";
 
 let StartFunc = ({ inOrderKey, inSettlementData }) => {
-    console.log("inOrderKey",inOrderKey);
+    let jVarLocalBranchName = CommonConfigJson.BranchName;
     let jVarLocalFromLocalStorage = localStorage.getItem(CommonKeys.OrdersData);
-    let jVarLocalParsed = JSON.parse(jVarLocalFromLocalStorage);
+    let jVarLocalJsonData = JSON.parse(jVarLocalFromLocalStorage);
+
+    let jVarLocalParsed = jVarLocalJsonData[jVarLocalBranchName];
 
     if (inOrderKey in jVarLocalParsed === false) {
         return false;
     };
-    console.log("jVarLocalParsed : ", jVarLocalParsed);
+
     jVarLocalParsed[inOrderKey].CheckOutData = inSettlementData;
 
-    localStorage.setItem(CommonKeys.OrdersData, JSON.stringify(jVarLocalParsed));
+    // localStorage.setItem(CommonKeys.OrdersData, JSON.stringify(jVarLocalJsonData));
+    StartFuncBulk({ inData: jVarLocalJsonData });
 };
 
 export { StartFunc };
