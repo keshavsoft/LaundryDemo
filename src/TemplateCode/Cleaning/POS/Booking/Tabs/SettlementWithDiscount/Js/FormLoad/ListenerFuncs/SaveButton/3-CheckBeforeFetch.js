@@ -16,6 +16,11 @@ let StartFunc = () => {
         return false;
     };
 
+    if (jVarLocalAmountShort() === false) {
+        // jFLocalReturnHTMLControlForCashAmountId().focus();
+        return false;
+    };
+
     if (jVarLocalCheckAmount === jVarLocalNettAmount + jVarLocalRoundOffAmount === false) {
         if (jVarLocalCashAmount === 0) {
             jFLocalReturnHTMLControlForCashAmountId().focus();
@@ -55,14 +60,27 @@ let StartFunc = () => {
             jFLocalReturnHTMLControlForCashAmountId().classList.add("is-invalid");
             return false;
         };
-
-
-
-
-
         return false;
     };
     return true;
+};
+
+let jVarLocalAmountShort = () => {
+    let jVarLocalNettAmount = parseFloat(jFLocalFromDomNettAmountId()) || 0;
+    let jVarLocalRoundOffAmount = parseFloat(jFLocalFromDomRoundOffId()) || 0;
+    let jVarLocalCashAmount = parseInt(jFLocalCashAmountId()) || 0;
+    let jVarLocalCardAmount = parseInt(jFLocalCardAmountId()) || 0;
+    let jVarLocalUPIAmount = parseInt(jFLocalUPIAmountId()) || 0;
+
+    let jVarLocalCheckAmount = jVarLocalCashAmount + jVarLocalCardAmount + jVarLocalUPIAmount;
+
+    if (jVarLocalCheckAmount < jVarLocalNettAmount + jVarLocalRoundOffAmount) {
+        let jVarLocalAlert = document.getElementById("AmountCheckAlert");
+        jVarLocalAlert.classList.remove("d-none");
+        jVarLocalAlert.classList.add("show");
+
+        return false;
+    };
 };
 
 let jFLocalReturnHTMLControlForCashAmountId = () => {
