@@ -17,60 +17,51 @@ let StartFunc = () => {
     };
 
     if (jVarLocalCheckAmount === jVarLocalNettAmount + jVarLocalRoundOffAmount === false) {
-        if (jVarLocalCashAmount > 0) {
-            if (jVarLocalCardAmount > 0) {
-                jFLocalReturnHTMLControlForUPIAmountId().focus();
-                jFLocalReturnHTMLControlForUPIAmountId().classList.add("is-invalid");
-                jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
-                jFLocalReturnHTMLControlForCashAmountId().classList.remove("is-invalid");
-            }
-            else {
-                jFLocalReturnHTMLControlForCardAmountId().focus();
-                jFLocalReturnHTMLControlForCardAmountId().classList.add("is-invalid")
-                jFLocalReturnHTMLControlForCashAmountId().classList.remove("is-invalid");
-                jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
-            };
-        }
-        else if (jVarLocalCardAmount > 0) {
-            if (jVarLocalCashAmount > 0) {
-                jFLocalReturnHTMLControlForUPIAmountId().focus();
-                jFLocalReturnHTMLControlForUPIAmountId().classList.add("is-invalid");
-                jFLocalReturnHTMLControlForCashAmountId().classList.remove("is-invalid");
-                jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
-            }
-            else {
-                jFLocalReturnHTMLControlForCashAmountId().focus();
-                jFLocalReturnHTMLControlForCashAmountId().classList.add("is-invalid");
-                jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
-                jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
-            };
-        }
-        else if (jVarLocalUPIAmount > 0) {
-            if (jVarLocalCashAmount > 0) {
-                jFLocalReturnHTMLControlForCardAmountId().focus();
-                jFLocalReturnHTMLControlForCardAmountId().classList.add("is-invalid")
-                jFLocalReturnHTMLControlForCashAmountId().classList.remove("is-invalid");
-                jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
-            }
-            else {
-                jFLocalReturnHTMLControlForCashAmountId().focus();
-                jFLocalReturnHTMLControlForCashAmountId().classList.add("is-invalid");
-                jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
-                jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
-            };
-        }
-        else {
+        if (jVarLocalCashAmount === 0) {
             jFLocalReturnHTMLControlForCashAmountId().focus();
             jFLocalReturnHTMLControlForCashAmountId().classList.add("is-invalid");
-            jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
-            jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
+            return false;
         };
+
+        if (jFLocalReturnHTMLControlForCashAmountId().classList.contains("is-invalid")) {
+            jFLocalReturnHTMLControlForCashAmountId().classList.remove("is-invalid");
+            jFLocalReturnHTMLControlForCashAmountId().classList.add("is-valid");
+        };
+
+        if (jVarLocalCardAmount === 0) {
+            jFLocalReturnHTMLControlForCardAmountId().focus();
+            jFLocalReturnHTMLControlForCardAmountId().classList.add("is-invalid");
+            return false;
+        };
+
+        if (jFLocalReturnHTMLControlForCardAmountId().classList.contains("is-invalid")) {
+            jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
+            jFLocalReturnHTMLControlForCardAmountId().classList.add("is-valid");
+        };
+
+        if (jVarLocalUPIAmount === 0) {
+            jFLocalReturnHTMLControlForUPIAmountId().focus();
+            jFLocalReturnHTMLControlForUPIAmountId().classList.add("is-invalid");
+            return false;
+        };
+
+        if (jFLocalReturnHTMLControlForUPIAmountId().classList.contains("is-invalid")) {
+            jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
+            jFLocalReturnHTMLControlForUPIAmountId().classList.add("is-valid");
+        };
+
+        if (jVarLocalCardAmount > 0 && jVarLocalUPIAmount > 0) {
+            jFLocalReturnHTMLControlForCashAmountId().focus();
+            jFLocalReturnHTMLControlForCashAmountId().classList.add("is-invalid");
+            return false;
+        };
+
+
+
+
 
         return false;
     };
-    jFLocalReturnHTMLControlForCashAmountId().classList.remove("is-invalid");
-    jFLocalReturnHTMLControlForCardAmountId().classList.remove("is-invalid");
-    jFLocalReturnHTMLControlForUPIAmountId().classList.remove("is-invalid");
     return true;
 };
 
