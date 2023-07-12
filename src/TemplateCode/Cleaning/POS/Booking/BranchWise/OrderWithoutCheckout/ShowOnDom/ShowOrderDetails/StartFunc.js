@@ -8,8 +8,14 @@ const StartFunc = ({ inPk }) => {
     jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.JsonData.CustomerData.CustomerName });
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.JsonData.CustomerData.CustomerMobile });
     jFLocalBranchNameId({ inBranchNameId: jVarLocalData.JsonData.OrderData.BranchName });
-
+    jFLocalToInputCurrentdateandtime({ inCurrentdateandtime: jVarLocalData.JsonData.OrderData.Currentdateandtime });
    jFLocalOrderAmount({ inData: jVarLocalData.JsonData });
+};
+
+let jFLocalToInputCurrentdateandtime = ({ inCurrentdateandtime }) => {
+    let jVarLocalHtmlId = 'Currentdateandtime';
+   let jVarLocalCurrentdateandtime = document.getElementById(jVarLocalHtmlId);
+   jVarLocalCurrentdateandtime.value = inCurrentdateandtime;
 };
 
 let jFLocalBranchNameId = ({ inBranchNameId }) => {

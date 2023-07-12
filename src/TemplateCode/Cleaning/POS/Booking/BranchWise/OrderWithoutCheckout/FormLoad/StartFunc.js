@@ -12,7 +12,7 @@ let StartFunc = () => {
    // StartFuncAddToDom();
 
     jFShowDeliveryDateTime();
-    jFLocalCurrentDateTimeToday();
+    // jFLocalCurrentDateTimeToday();
 
     StartFuncAddFrequent();
     StartFuncToItemAddTemplateRow();
