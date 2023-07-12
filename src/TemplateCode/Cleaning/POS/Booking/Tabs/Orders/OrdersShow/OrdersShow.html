@@ -57,6 +57,15 @@
                                     Home
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="../../../../../../../../Index.html" class="nav-link text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                      </svg>
+                                    Today Orders
+                                </a>
+                            </li>
                         </ul>
                         <ul class="navbar-nav">
                             <li id="HeaderLoginButtonId">
@@ -160,12 +169,13 @@
                         <thead>
                             <tr>
                                 <th width="5%">#</th>
-                                <th width="50%">Customer Name</th>
-                                <th width="15%" style="text-align:center">City</th>
-                                <th width="15%" style="text-align:center">Mobile</th>
+                                <th width="5%">Order Number</th>
+                                <th width="30%">Customer Name</th>
+                                <th width="10%" style="text-align:center">Branch</th>
+                                <th width="10%" style="text-align:center">Mobile</th>
+                                <th width="20%" style="text-align:center">Date</th>
                                 <th width="15%" style="text-align: center">Order Details</th>
-                                <th width="15%" style="text-align: center">Settlement</th>
-                                <th width="15%"></th>
+                                <th width="5%" style="text-align: center">Settlement</th>
                             </tr>
 
                         </thead>
@@ -202,6 +212,9 @@
                         {{ForSNo @index}}
                     </td>
                     <td>
+                        {{ForSNo @index}}
+                    </td>
+                    <td>
                         {{CustomerData.CustomerName}}
                     </td>
                     <td>
@@ -209,6 +222,9 @@
                     </td>
                     <td>
                         {{CustomerData.CustomerMobile}}
+                    </td>
+                    <td>
+                        {{OrderData.Currentdateandtime}}
                     </td>
                     <td>
                         <a href="./../../../BranchWise/OrderWithoutCheckout/OrderWithoutCheckout.html?OrderNumber={{@key}}" class="btn btn-success" >Show Order</a>
