@@ -4,6 +4,7 @@ let StartFunc = ({ inCurrentTarget }) => {
     if (jFLocalForItem({ inClosestTabPane: jVarLocalClosestTabPane }) === false) return false;
     if (jFLocalForRate({ inClosestTabPane: jVarLocalClosestTabPane }) === false) return false;
     if (jFLocalForPcs({ inClosestTabPane: jVarLocalClosestTabPane }) === false) return false;
+    if (jFLocalForDisPer({ inClosestTabPane: jVarLocalClosestTabPane }) === false) return false;
 
     return true;
 };
@@ -33,6 +34,21 @@ let jFLocalForRate = ({ inClosestTabPane }) => {
     } else {
         jVarLocalPcsClass.classList.remove("is-invalid");
         jVarLocalPcsClass.classList.add("is-valid");
+    };
+
+    return true;
+};
+
+let jFLocalForDisPer = ({ inClosestTabPane }) => {
+    let jVarLocalDisPerClass = inClosestTabPane.querySelector(".DisPerClass");
+
+    if (parseInt(jVarLocalDisPerClass.value) <= 10 === false) {
+        jVarLocalDisPerClass.classList.add("is-invalid");
+        jVarLocalDisPerClass.focus();
+        return false;
+    } else {
+        jVarLocalDisPerClass.classList.remove("is-invalid");
+        jVarLocalDisPerClass.classList.add("is-valid");
     };
 
     return true;

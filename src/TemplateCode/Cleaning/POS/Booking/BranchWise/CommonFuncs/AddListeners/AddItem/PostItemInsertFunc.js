@@ -18,18 +18,22 @@ const jFLocalClearEntryHtmls = ({ inTabPane }) => {
     let jVarLocalItemSelect = inTabPane.querySelector(".ItemSelect");
     let jVarLocalRate = inTabPane.querySelector(".RateClass");
     let jVarLocalPcs = inTabPane.querySelector(".PcsClass");
+    let jVarLocalDisPer = inTabPane.querySelector(".DisPerClass");
 
     jVarLocalItemSelect.value = "";
     jVarLocalRate.value = "";
     jVarLocalPcs.value = 0;
+    jVarLocalDisPer.value = 0;
 
     jVarLocalItemSelect.classList.remove("is-invalid");
     jVarLocalRate.classList.remove("is-invalid");
     jVarLocalPcs.classList.remove("is-invalid");
+    jVarLocalDisPer.classList.remove("is-invalid");
 
     jVarLocalItemSelect.classList.remove("is-valid");
     jVarLocalRate.classList.remove("is-valid");
     jVarLocalPcs.classList.remove("is-valid");
+    jVarLocalDisPer.classList.remove("is-valid");
 };
 
 const jFLocalSetFocus = ({ inTabPane }) => {
