@@ -1,11 +1,16 @@
 import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../../../FromLocalStorage/OrdersData/FromPk.js";
+import { StartFunc as StartFuncPrepareForOrderItemsTable } from "../../../../../../../../../../ToLocalStorage/OrderItemsToShow/PrepareForOrderItemsTable.js";
+import { StartFunc as StartFuncFromLocalStorageOrderItemsToShow } from "../../../../../../../../../../FromLocalStorage/OrderItemsToShow/Bulk.js";
 
 const StartFunc = ({ inPk }) => {
     let jVarLocalData = StartFuncFromLocalStorage({ inPk });
-
+    StartFuncPrepareForOrderItemsTable();
+    let jVarLocalDataNeeded = StartFuncFromLocalStorageOrderItemsToShow();
+    console.log("jVarLocalDataNeeded", jVarLocalDataNeeded);
     jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.JsonData.CustomerData.CustomerName });
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.JsonData.CustomerData.CustomerMobile });
-    jFLocalOrderAmount({ inData: jVarLocalData.JsonData });
+    
+    jFLocalOrderAmount({ inData: jVarLocalDataNeeded.BodyData});
     jFLocalBranchNameId({ inOrderInfoCustomerBranchId: jVarLocalData.JsonData.OrderData.BranchName });
     jFLocalToInputOrderDate({ inOrderDate: jVarLocalData.JsonData.OrderData.Currentdateandtime });
     jFLocalOrderNumberId({ inOrderNumberId: inPk });
@@ -17,7 +22,7 @@ let jFLocalOrderNumberId = ({ inOrderNumberId }) => {
     jVarLocalOrderNumberId.innerHTML = inOrderNumberId;
 };
 
-let jFLocalOrderAmount = ({ inData }) => {
+let jFLocalOrderAmount1 = ({ inData }) => {
     let jVarLocalItemsArray = Object.values(inData.ItemsInOrder).map(element => {
         return element.Total;
     });
@@ -33,6 +38,16 @@ let jFLocalOrderAmount = ({ inData }) => {
     jFLocalOrderAmountId({ inOrderAmountId: sum + sumOfAddOn });
 };
 
+let jFLocalOrderAmount = ({ inData }) => {
+    let jVarLocalItemsArray = Object.values(inData).map(element => {
+        return element.Total;
+    });
+
+    const sum = jVarLocalItemsArray.reduce((partialSum, a) => partialSum + a, 0);
+
+    jFLocalOrderAmountId({ inOrderAmountId: sum  });
+};
+
 
 
 let jFLocalCustomerName = ({ inOrderInfoCustomerNameId }) => {
@@ -44,14 +59,14 @@ let jFLocalCustomerName = ({ inOrderInfoCustomerNameId }) => {
 
 let jFLocalBranchNameId = ({ inOrderInfoCustomerBranchId }) => {
     let jVarLocalHtmlId = 'BranchNameId';
-   let jVarLocalOrderInfoBranchNameId = document.getElementById(jVarLocalHtmlId);
-   jVarLocalOrderInfoBranchNameId.value = inOrderInfoCustomerBranchId;
+    let jVarLocalOrderInfoBranchNameId = document.getElementById(jVarLocalHtmlId);
+    jVarLocalOrderInfoBranchNameId.value = inOrderInfoCustomerBranchId;
 };
 
 let jFLocalToInputOrderDate = ({ inOrderDate }) => {
     let jVarLocalHtmlId = 'OrderDate';
-   let jVarLocalOrderDate = document.getElementById(jVarLocalHtmlId);
-   jVarLocalOrderDate.value = inOrderDate;
+    let jVarLocalOrderDate = document.getElementById(jVarLocalHtmlId);
+    jVarLocalOrderDate.value = inOrderDate;
 };
 
 let jFLocalOrderAmountId = ({ inOrderAmountId }) => {
