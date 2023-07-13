@@ -1,6 +1,4 @@
 import { StartFunc as StartFuncAddFrequent } from "./MenTab/AddFrequent.js";
-import { StartFunc as StartFuncAddToDom } from "./AddToDom.js";
-
 import { StartFunc as StartFuncToLocalStorageFuncs } from "./ToLocalStorageFuncs.js";
 import { StartFunc as StartFuncToItemAddTemplateRow } from "./ToDom/ToItemAddTemplateRow/ToItemSerialClass.js";
 import { StartFunc as StartFuncFromUrlParams } from "./FromUrlParams/StartFunc.js";
@@ -9,10 +7,7 @@ let StartFunc = () => {
     StartFuncFromUrlParams();
     StartFuncToLocalStorageFuncs();
 
-   // StartFuncAddToDom();
-
     jFShowDeliveryDateTime();
-    // jFLocalCurrentDateTimeToday();
 
     StartFuncAddFrequent();
     StartFuncToItemAddTemplateRow();

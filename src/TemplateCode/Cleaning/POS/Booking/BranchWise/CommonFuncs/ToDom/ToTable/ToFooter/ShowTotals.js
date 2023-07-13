@@ -16,8 +16,7 @@ let jFLocalShowTotalTotals = ({ inJsonData }) => {
     if (jVarLocalItemsTableFootTotal === null === false) {
         let jVarLocalTotalArray = inJsonData.map(element => element.Total);
         let sumTotal = jVarLocalTotalArray.reduce((a, b) => a + b, 0);
-
-        jVarLocalItemsTableFootTotal.innerHTML = Math.round(sumTotal);
+        jVarLocalItemsTableFootTotal.innerHTML = sumTotal.toFixed(2);
     };
 };
 
