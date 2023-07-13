@@ -5,8 +5,8 @@ let StartFunc = ({ inItemData }) => {
         ([key, value]) => {
             value.Total = value.Rate * value.Pcs;
             value.Total = value.Total * ((100 - value.DisPer) / 100);
-            value.Total = Math.round(value.Total);
             value.Total += jFLocalConsiderAddOnData({ inItemSerial: value.ItemSerial });
+            value.Total = Number(value.Total.toFixed(2));
         }
     );
 };

@@ -3,9 +3,7 @@ import { StartFunc as StartFuncToRow } from "./ToRow/ToOrderItems.js";
 import { StartFunc as StartFuncShowTotals } from "./ToFooter/ShowTotals.js";
 import { StartFunc as StartFuncToFactories } from "./ToRow/ToFactories.js";
 import { StartFunc as StartFuncToDeliveryDateTime } from "./ToRow/ToDeliveryDateTime.js";
-// import { StartFunc as StartFuncOrderItemsToShow } from "../../FromLocalStorage/OrderItemsToShow.js";
 import { StartFunc as StartFuncOrderItemsToShow } from "../../../../../../../../../FromLocalStorage/OrderItemsToShow/Bulk.js";
-// import { StartFunc as StartFuncPrepareForOrderItemsTable } from "../../ToLocalStorage/PrepareForOrderItemsTable.js";
 import { StartFunc as StartFuncPrepareForOrderItemsTable } from "../../../../../../../../../ToLocalStorage/OrderItemsToShow/PrepareForOrderItemsTable.js";
 
 let jVarCommonTableBodyId = "ItemsTableBodyId";
