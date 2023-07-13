@@ -3,10 +3,15 @@ import { StartFunc as StartFuncFromAddOnsAll } from "../../../FromLocalStorage/A
 let StartFunc = ({ inItemData }) => {
     Object.entries(inItemData).forEach(
         ([key, value]) => {
-            value.Total = value.Rate * value.Pcs;
-            value.Total = value.Total * ((100 - value.DisPer) / 100);
-            value.Total += jFLocalConsiderAddOnData({ inItemSerial: value.ItemSerial });
-            value.Total = Number(value.Total.toFixed(2));
+//            value.Total = value.Rate * value.Pcs;
+            value.TotalOriginal = value.Rate * value.Pcs;
+           // value.Total = value.TotalOriginal * ((100 - value.DisPer) / 100);
+           
+            value.TotalAfterDiscount = value.TotalOriginal * ((100 - value.DisPer) / 100);
+            value.TotalBeforeRounded = value.TotalAfterDiscount + jFLocalConsiderAddOnData({ inItemSerial: value.ItemSerial });
+            // value.Total = Number(value.TotalOriginal.toFixed(2));
+
+            value.Total = Number(value.TotalBeforeRounded.toFixed(2));
         }
     );
 };

@@ -1,5 +1,7 @@
-import { StartFunc as StartFuncItemsInOrder } from "../../FromLocalStorage/ItemsInOrder/Bulk.js";
 import { StartFunc as StartFuncClubAddOnData } from "./PrepareForOrderItemsTable/ClubAddOnData.js";
+import { StartFunc as StartFuncAddItemData } from "./PrepareForOrderItemsTable/AddItemDataFunc.js";
+import { StartFunc as StartFuncFromLocalStorageOrderItemsToShow } from "../../FromLocalStorage/OrderItemsToShow/Bulk.js";
+import { StartFunc as StartFuncFooterData } from "./PrepareForOrderItemsTable/FooterDataFunc.js";
 
 let StartFunc = () => {
     LocalFuncClubData();
@@ -9,34 +11,18 @@ let LocalFuncClubData = () => {
     let jVarLocalStorageKey = "OrderItemsToShow";
 
     let jVarLocalToShowData = { BodyData: {}, FooterData: {} };
-    jVarLocalToShowData.BodyData = LocalFuncAddItemData();
+    jVarLocalToShowData.BodyData = StartFuncAddItemData();
 
     StartFuncClubAddOnData({ inItemData: jVarLocalToShowData.BodyData });
+    
+    let jVarLocalFromFooter = StartFuncFooterData({ inData: jVarLocalToShowData.BodyData});
+
+    jVarLocalToShowData.FooterData={jVarLocalFromFooter};
+
 
     localStorage.setItem(jVarLocalStorageKey, JSON.stringify(jVarLocalToShowData));
 };
 
-let LocalFuncAddItemData = () => {
-    let jVarLocalOrderItemsData = StartFuncItemsInOrder();
-    let jVarLocalToShowData = {};
 
-    Object.entries(jVarLocalOrderItemsData).forEach(
-        ([key, value]) => {
-            jVarLocalToShowData[key] = {};
-            jVarLocalToShowData[key].ItemSerial = value.ItemSerial;
-            jVarLocalToShowData[key].Category = value.Category;
-            jVarLocalToShowData[key].ItemName = value.ItemName;
-            jVarLocalToShowData[key].ItemNamePk = value.ItemNamePk;
-            jVarLocalToShowData[key].location = value.location;
-            jVarLocalToShowData[key].locationPk = value.locationPk;
-            jVarLocalToShowData[key].Pcs = value.Pcs;
-            jVarLocalToShowData[key].Rate = value.Rate;
-            jVarLocalToShowData[key].DisPer = value.DisPer;
-            jVarLocalToShowData[key].DeliveryDateTime = value.DeliveryDateTime;
-        }
-    );
-
-    return jVarLocalToShowData;
-};
 
 export { StartFunc };
