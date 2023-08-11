@@ -6,11 +6,11 @@ const StartFunc = ({ inPk }) => {
     let jVarLocalData = StartFuncFromLocalStorage({ inPk });
     StartFuncPrepareForOrderItemsTable();
     let jVarLocalDataNeeded = StartFuncFromLocalStorageOrderItemsToShow();
-    console.log("jVarLocalDataNeeded", jVarLocalDataNeeded);
+    
     jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.JsonData.CustomerData.CustomerName });
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.JsonData.CustomerData.CustomerMobile });
-    
-    jFLocalOrderAmount({ inData: jVarLocalDataNeeded.BodyData});
+
+    jFLocalOrderAmount({ inData: jVarLocalDataNeeded.BodyData });
     jFLocalBranchNameId({ inOrderInfoCustomerBranchId: jVarLocalData.JsonData.OrderData.BranchName });
     jFLocalToInputOrderDate({ inOrderDate: jVarLocalData.JsonData.OrderData.Currentdateandtime });
     jFLocalOrderNumberId({ inOrderNumberId: inPk });
@@ -22,22 +22,6 @@ let jFLocalOrderNumberId = ({ inOrderNumberId }) => {
     jVarLocalOrderNumberId.innerHTML = inOrderNumberId;
 };
 
-let jFLocalOrderAmount1 = ({ inData }) => {
-    let jVarLocalItemsArray = Object.values(inData.ItemsInOrder).map(element => {
-        return element.Total;
-    });
-
-    const sum = jVarLocalItemsArray.reduce((partialSum, a) => partialSum + a, 0);
-
-    let jVarLocalAddOn = Object.values(inData.AddOnData).map(element => {
-        return element.AddOnRate;
-    });
-
-    const sumOfAddOn = jVarLocalAddOn.reduce((partialSum, a) => partialSum + a, 0);
-
-    jFLocalOrderAmountId({ inOrderAmountId: sum + sumOfAddOn });
-};
-
 let jFLocalOrderAmount = ({ inData }) => {
     let jVarLocalItemsArray = Object.values(inData).map(element => {
         return element.Total;
@@ -45,10 +29,8 @@ let jFLocalOrderAmount = ({ inData }) => {
 
     const sum = jVarLocalItemsArray.reduce((partialSum, a) => partialSum + a, 0);
 
-    jFLocalOrderAmountId({ inOrderAmountId: sum  });
+    jFLocalOrderAmountId({ inOrderAmountId: sum });
 };
-
-
 
 let jFLocalCustomerName = ({ inOrderInfoCustomerNameId }) => {
     let jVarLocalHtmlId = "OrderInfoCustomerNameId";
@@ -80,6 +62,5 @@ let jFLocalOrderInfoCustomerMobileId = ({ inOrderInfoCustomerMobileId }) => {
     let jVarLocalOrderInfoCustomerMobileId = document.getElementById(jVarLocalHtmlId);
     jVarLocalOrderInfoCustomerMobileId.value = inOrderInfoCustomerMobileId;
 };
-
 
 export { StartFunc };

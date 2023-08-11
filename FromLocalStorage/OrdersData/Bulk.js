@@ -12,7 +12,7 @@ const StartFunc = () => {
 
         jVarLocalDataNeeded = jVarLocalCustomerDataAsJson;
     };
-
+ 
     return jVarLocalDataNeeded[jVarLocalBranchName];
 };
 

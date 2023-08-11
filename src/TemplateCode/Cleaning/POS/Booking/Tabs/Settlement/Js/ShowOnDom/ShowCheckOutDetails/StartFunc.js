@@ -2,8 +2,8 @@ import { StartFunc as StartFuncFromLocalStorage } from "../../../../../../../../
 
 const StartFunc = ({ inPk }) => {
     let jVarLocalData = StartFuncFromLocalStorage({ inPk });
-
-    jFLocalCashAmountId({ inCashAmountId:jVarLocalData });
+    console.log("jVarLocalData : ", jVarLocalData);
+    jFLocalCashAmountId({ inCashAmountId: jVarLocalData });
 
     jFLocalCustomerName({ inOrderInfoCustomerNameId: jVarLocalData.JsonData.CustomerData.CustomerName });
     jFLocalOrderInfoCustomerMobileId({ inOrderInfoCustomerMobileId: jVarLocalData.JsonData.CustomerData.CustomerMobile });
